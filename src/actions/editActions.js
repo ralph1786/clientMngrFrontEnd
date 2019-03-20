@@ -1,4 +1,9 @@
-export const editChild = childObj => ({
+export const selectedChild = childObj => ({
+  type: "SELECTED_CHILD",
+  payload: childObj
+});
+
+const editChild = childObj => ({
   type: "EDIT_CHILD",
   payload: childObj
 });

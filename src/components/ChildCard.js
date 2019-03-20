@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { deleteChild } from "../actions/childActions";
+import { editChild } from "../actions/editActions";
 import { Link, withRouter } from "react-router-dom";
 import "./ChildCard.scss";
 
@@ -25,7 +26,8 @@ const ChildCard = props => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    deleteChild: id => dispatch(deleteChild(id))
+    deleteChild: id => dispatch(deleteChild(id)),
+    editChild: childObj => dispatch(editChild(childObj))
   };
 };
 
