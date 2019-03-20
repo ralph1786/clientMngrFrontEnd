@@ -5,7 +5,7 @@ import { Link, withRouter } from "react-router-dom";
 import "./ChildCard.scss";
 
 const ChildCard = props => {
-  console.log(props.child);
+  // console.log(props.child);
   const { name, age, image, address, allergies, balance } = props.child;
   return (
     <div className="child-card animated fadeInUp">
@@ -16,7 +16,7 @@ const ChildCard = props => {
       <p>Allergies: {allergies}</p>
       <p>Balance: ${balance}</p>
       <Link to="/edit">
-        <button>Edit</button>
+        <button onClick={e => console.log(props.child)}>Edit</button>
       </Link>
       <button onClick={() => props.deleteChild(props.child.id)}>Delete</button>
     </div>
