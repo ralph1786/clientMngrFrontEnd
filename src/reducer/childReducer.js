@@ -8,15 +8,6 @@ const childReducer = (state = initialState, action) => {
       return [...state, action.payload];
     case "REMOVE_CHILD":
       return state.filter(child => child.id !== action.payload);
-    case "EDIT_CHILD":
-      const editedChildren = state.map(child => {
-        if (child.id === action.payload.id) {
-          return { ...child, ...action.payload };
-        } else {
-          return child;
-        }
-      });
-      return editedChildren;
     default:
       return state;
   }
