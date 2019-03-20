@@ -1,0 +1,15 @@
+.dashboard button {
+  margin-left: 50px;
+  margin-top: 20px;
+  padding: 9px;
+  border-radius: 25px;
+  font-size: 1.04em;
+  background-color: rgb(41, 125, 237);
+  color: white;
+  outline: none;
+}
+
+.dashboard button:hover {
+  cursor: pointer;
+  background-color: rgb(83, 152, 241);
+}

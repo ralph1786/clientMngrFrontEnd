@@ -1,0 +1,23 @@
+.children-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-left: 50px;
+}
+
+.search-bar input {
+  margin-left: 34%;
+  width: 30%;
+  height: 30px;
+  font-size: 1.3em;
+  margin-bottom: 7%;
+  margin-top: 4%;
+  outline: none;
+  text-align: center;
+}
+
+.search-bar input:focus {
+  -webkit-box-shadow: 6px 6px 24px 1px rgb(47, 206, 140);
+  -moz-box-shadow: 6px 6px 24px 1px rgb(47, 206, 140);
+  box-shadow: 6px 6px 24px 1px rgb(47, 206, 140);
+}

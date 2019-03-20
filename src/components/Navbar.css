@@ -1,0 +1,38 @@
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /* grid-template-rows: repeat(12, 1fr); */
+  background: #a8ff78; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #78ffd6,
+    #a8ff78
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #78ffd6,
+    #a8ff78
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.navbar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 25px;
+  grid-column: 1/2;
+  margin: 20px;
+}
+
+.navbar span {
+  grid-column: 12/13;
+  height: 25px;
+  width: 100px;
+  margin: 20px;
+  border-radius: 25px;
+  outline: none;
+}
+
+.navbar button:hover {
+  cursor: pointer;
+  background-color: rgb(209, 208, 208);
+}

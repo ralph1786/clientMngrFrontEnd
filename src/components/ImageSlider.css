@@ -1,0 +1,17 @@
+/* .image-slider {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column: 1/13;
+} */
+
+.carousel.carousel-slider {
+  height: 550px;
+}
+
+.carousel .slide img {
+  height: 550px;
+}
+
+.carousel .thumbs {
+  margin-left: 30%;
+}

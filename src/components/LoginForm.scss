@@ -1,0 +1,53 @@
+.login {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+
+.login h1 {
+  grid-column: 5/9;
+  text-align: center;
+}
+
+.login form {
+  -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+  -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+  box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+  background-color: rgb(32, 221, 158);
+  grid-column: 5/9;
+  grid-row: 3/7;
+  text-align: center;
+  font-size: 2em;
+  margin: 10px;
+}
+
+.login form label,
+.login form input {
+  margin-top: 50px;
+  padding: 10px;
+  height: 18px;
+}
+
+.login form input {
+  margin-left: 5px;
+  width: 50%;
+  font-size: 0.8em;
+  outline: none;
+}
+
+.login form label {
+  color: rgb(80, 78, 78);
+}
+
+.login form button {
+  width: 50%;
+  height: 10%;
+  font-size: 20px;
+  margin-top: 50px;
+  border-radius: 25px;
+}
+
+.login form button:hover {
+  cursor: pointer;
+  background-color: rgb(209, 208, 208);
+}

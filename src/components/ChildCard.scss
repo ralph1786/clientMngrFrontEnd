@@ -1,0 +1,42 @@
+.child-card {
+  -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+  -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+  box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+  margin: 10px;
+  padding: 5px;
+  width: 400px;
+  height: 550px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.child-card img {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.child-card button:nth-child(odd) {
+  margin: 10px;
+  padding: 2px 20px;
+  border-radius: 25px;
+}
+
+.child-card button:nth-child(odd):hover {
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+}
+
+.child-card button:nth-child(even) {
+  margin: 10px;
+  padding: 2px 20px;
+  border-radius: 25px;
+}
+
+.child-card button:nth-child(even):hover {
+  background-color: rgb(248, 44, 44);
+  color: white;
+  cursor: pointer;
+}
