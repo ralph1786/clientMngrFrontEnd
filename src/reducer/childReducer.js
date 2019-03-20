@@ -34,8 +34,8 @@ export default childReducer;
 //   switch (action.type) {
 //     case "LOAD_CHILDREN":
 //       return { ...state, children: action.payload };
-//     // case "CREATE_CHILD":
-//     //   return {...state, };
+//     case "CREATE_CHILD":
+//       return {...state};
 //     default:
 //       return state;
 //   }

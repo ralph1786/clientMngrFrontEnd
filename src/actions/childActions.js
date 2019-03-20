@@ -62,6 +62,7 @@ export const deleteChild = id => {
 };
 
 export const updateChild = childObj => {
+  console.log(childObj);
   return dispatch => {
     return fetch(`http://localhost:3000/api/v1/children/${childObj.id}`, {
       method: "PATCH",
