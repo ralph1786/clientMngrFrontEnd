@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { updateChild } from "../actions/childActions";
+import { updateChild } from "../actions/editActions";
 import { connect } from "react-redux";
 
 class EditForm extends Component {
