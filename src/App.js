@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import Home from "./containers/Home";
 import LoginForm from "./components/LoginForm";
+import ParentLoginForm from "./components/ParentLoginForm";
 import Dashboard from "./containers/Dashboard";
 import CreateForm from "./components/CreateForm";
 import EditForm from "./components/EditForm.js";
@@ -52,7 +53,7 @@ class App extends Component {
               )
             }
           />
-          <Route path="/parent_dashboar" render={() => <LoginForm />} />
+          <Route path="/parent_dashboard" render={() => <ParentLoginForm />} />
           <Route path="/" component={Home} />
         </Switch>
       </div>

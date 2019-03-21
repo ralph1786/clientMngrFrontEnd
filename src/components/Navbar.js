@@ -5,7 +5,7 @@ import LogOut from "./LogOut";
 import "./Navbar.css";
 
 const Navbar = props => {
-  // console.log(props.provider);
+  // console.log(props);
   return (
     <div className="navbar">
       <Link to="/">
@@ -15,7 +15,9 @@ const Navbar = props => {
         />
       </Link>
       {/* <span>{Object.keys(props.provider).length > 0 ? <LogOut /> : ""}</span> */}
-      <span>{localStorage.getItem("token") ? <LogOut /> : ""}</span>
+      <span>
+        {localStorage.getItem("token") ? <LogOut user={props} /> : ""}
+      </span>
       {/* <button onClick={() => localStorage.removeItem("token")}>
         clear localStorage
       </button> */}

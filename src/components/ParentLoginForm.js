@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./LoginForm.scss";
+import "./ParentLoginForm.scss";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { loginProvider } from "../actions/authActions";
@@ -22,10 +22,10 @@ class LoginForm extends Component {
   };
 
   render() {
-    // console.log(this.props);
+    console.log(this.props.parent);
     return (
       <div className="login animated flipInY">
-        <h1>Welcome Provider</h1>
+        <h1>Welcome Parent</h1>
         <form onSubmit={this.handleSubmit}>
           <label>Username</label>
           <input
@@ -52,7 +52,7 @@ class LoginForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    provider: state.provider
+    parent: state.provider.parent
   };
 };
 

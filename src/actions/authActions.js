@@ -3,6 +3,16 @@ const addProvider = providerObj => ({
   payload: providerObj
 });
 
+const addParent = parentObj => ({
+  type: "LOGIN_PARENT",
+  payload: parentObj
+});
+
+export const removeParent = parentObj => ({
+  type: "LOGOUT_PARENT",
+  payload: parentObj
+});
+
 export const removeProvider = providerObj => ({
   type: "LOGOUT_PROVIDER",
   payload: providerObj
@@ -23,6 +33,26 @@ export const loginProvider = providerObj => {
         // console.log(res);
         localStorage.setItem("token", res.jwt);
         dispatch(addProvider(res.provider));
+      })
+      .catch(err => console.log(err));
+  };
+};
+
+export const loginParent = parentObj => {
+  return dispatch => {
+    return fetch("http://localhost:3000/api/v1/login", {
+      method: "POST",
+      body: JSON.stringify({ parent: parentObj }),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        // console.log(res);
+        localStorage.setItem("token", res.jwt);
+        dispatch(addParent(res.parent));
       })
       .catch(err => console.log(err));
   };
