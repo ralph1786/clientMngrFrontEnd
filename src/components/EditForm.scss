@@ -1,0 +1,73 @@
+.edit-form {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+
+// .login h1 {
+//   grid-column: 5/9;
+//   text-align: center;
+// }
+
+.edit-form form {
+  -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+  -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+  box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+  background-color: rgb(32, 221, 158);
+  grid-column: 5/9;
+  grid-row: 2/6;
+  text-align: center;
+  font-size: 1.8em;
+  margin: 10px;
+  padding: 10px;
+}
+
+.edit-form form label,
+.edit-form form input {
+  margin-top: 5px;
+  padding: 5px;
+  height: 15px;
+}
+
+.edit-form form input[type="text"] {
+  //   margin-left: 5px;
+  width: 50%;
+  font-size: 0.8em;
+  outline: none;
+  float: right;
+  margin-right: 20px;
+}
+
+.edit-form form label {
+  color: rgb(80, 78, 78);
+}
+
+.edit-form form input[type="submit"] {
+  width: 50%;
+  height: 10%;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+}
+
+.edit-form form input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: rgb(209, 208, 208);
+}
+
+#button-edit {
+  margin-left: 50px;
+  margin-top: 20px;
+  padding: 9px;
+  border-radius: 25px;
+  font-size: 1.04em;
+  background-color: rgb(41, 125, 237);
+  color: white;
+  outline: none;
+}
+
+#button-edit:hover {
+  cursor: pointer;
+  background-color: rgb(83, 152, 241);
+}

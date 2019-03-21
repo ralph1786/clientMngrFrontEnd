@@ -7,13 +7,20 @@ import CreateForm from "./components/CreateForm";
 import EditForm from "./components/EditForm.js";
 import Navbar from "./components/Navbar";
 import { connect } from "react-redux";
+import { loginProvider } from "./actions/authActions";
 
 import "./App.css";
 
 class App extends Component {
+  // componentDidMount() {
+  //   let token = localStorage.token;
+  //   if (token) {
+  //     this.props.loginProvider(this.props.provider.provider);
+  //   }
+  // }
+
   render() {
     // console.log(this.props.provider.provider);
-
     return (
       <div>
         <Navbar />
@@ -24,7 +31,7 @@ class App extends Component {
               Object.keys(this.props.provider.provider).length > 0 ? (
                 <Redirect to="/dashboard" />
               ) : (
-                <LoginForm logInSubmitHandler={this.logInSubmitHandler} />
+                <LoginForm />
               )
             }
           />
@@ -45,6 +52,7 @@ class App extends Component {
               )
             }
           />
+          <Route path="/parent_dashboar" render={() => <LoginForm />} />
           <Route path="/" component={Home} />
         </Switch>
       </div>
@@ -58,4 +66,15 @@ const mapStateToProps = state => {
   };
 };
 
-export default withRouter(connect(mapStateToProps)(App));
+const mapDispatchToProps = dispatch => {
+  return {
+    loginProvider: providerObj => dispatch(loginProvider(providerObj))
+  };
+};
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+);

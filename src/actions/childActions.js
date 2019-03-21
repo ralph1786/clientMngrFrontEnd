@@ -23,6 +23,7 @@ export const allChildren = () => {
 };
 
 export const newChild = childInfo => {
+  console.log(childInfo);
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/children", {
       method: "POST",

@@ -13,7 +13,7 @@ import editReducer from "./reducer/editReducer";
 const rootReducer = combineReducers({
   provider: authReducer,
   children: childReducer,
-  editReducer: editReducer
+  editChild: editReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
