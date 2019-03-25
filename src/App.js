@@ -27,13 +27,18 @@ class App extends Component {
   //   })
   //     .then(res => res.json())
   //     .then(res => {
-  //       console.log(res.provider);
-  //       // this.props.setProvider(res.provider);
-  //     });
+  //       // console.log(res.provider);
+  //       if (res.error) {
+  //         return <Redirect to="/login" />;
+  //       } else {
+  //         this.props.setProvider(res.provider);
+  //       }
+  //     })
+  //     .catch(err => console.log(err));
   // }
 
   render() {
-    // console.log(this.props);
+    // console.log(this.props.provider.provider);
     return (
       <div>
         <Navbar />
@@ -61,7 +66,7 @@ class App extends Component {
               localStorage.getItem("token") ? (
                 <Dashboard />
               ) : (
-                <Redirect to="/" />
+                <Redirect to="/login" />
               )
             }
           />

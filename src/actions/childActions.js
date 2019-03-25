@@ -3,7 +3,7 @@ const loadChildren = children => ({
   payload: children
 });
 
-const createChild = childObj => ({
+export const createChild = childObj => ({
   type: "CREATE_CHILD",
   payload: childObj
 });
@@ -22,25 +22,25 @@ export const allChildren = () => {
   };
 };
 
-export const newChild = childInfo => {
-  console.log(childInfo);
-  return dispatch => {
-    return fetch("http://localhost:80/api/v1/children", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify(childInfo)
-    })
-      .then(res => res.json())
-      .then(res => {
-        console.log(res);
-        dispatch(createChild(res));
-      })
-      .catch(err => console.log(err));
-  };
-};
+// export const newChild = childInfo => {
+//   console.log(childInfo);
+//   return dispatch => {
+//     return fetch("http://localhost:80/api/v1/children", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Accept: "application/json"
+//       },
+//       body: JSON.stringify(childInfo)
+//     })
+//       .then(res => res.json())
+//       .then(res => {
+//         console.log(res);
+//         dispatch(createChild(res));
+//       })
+//       .catch(err => console.log(err));
+//   };
+// };
 
 export const deleteChild = id => {
   return dispatch => {

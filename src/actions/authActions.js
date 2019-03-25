@@ -3,7 +3,7 @@ const addProvider = providerObj => ({
   payload: providerObj
 });
 
-const addParent = parentObj => ({
+export const addParent = parentObj => ({
   type: "LOGIN_PARENT",
   payload: parentObj
 });

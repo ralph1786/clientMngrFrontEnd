@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import { newChild } from "../actions/childActions";
+// import { newChild } from "../actions/childActions";
+import { createChild } from "../actions/childActions";
 import { connect } from "react-redux";
-import ActiveStorageProvider, {
-  DirectUploadProvider
-} from "react-activestorage-provider";
 import "./CreateForm.scss";
 
 class CreateForm extends Component {
@@ -16,7 +14,8 @@ class CreateForm extends Component {
     allergies: "",
     balance: "",
     provider_id: 0,
-    parent_id: 0
+    parent_id: 0,
+    forms: null
   };
 
   handleChange = e => {
@@ -25,10 +24,32 @@ class CreateForm extends Component {
     });
   };
 
+  handleFilesChange = e => {
+    this.setState({
+      forms: e.target.files
+    });
+  };
+
   handleCreateSubmit = e => {
     e.preventDefault();
     // console.log(this.state);
-    this.props.newChild(this.state);
+    // this.props.newChild(this.state);
+    const data = new FormData();
+    for (let key in this.state) {
+      if (key === "forms") {
+        for (let form of this.state.forms) {
+          data.append("forms[]", form);
+        }
+      } else {
+        data.append(key, this.state[key]);
+      }
+    }
+    fetch("http://localhost:80/api/v1/children", {
+      method: "POST",
+      body: data
+    })
+      .then(res => res.json())
+      .then(res => console.log(res));
   };
 
   render() {
@@ -114,56 +135,14 @@ class CreateForm extends Component {
             />
             <br />
             <br />
-            <ActiveStorageProvider
-              endpoint={{
-                path: "api/v1/children",
-                model: "Child",
-                attribute: "forms",
-                method: "POST",
-                host: "1b61a5ad.ngrok.io"
-              }}
-              multiple={true}
-              onSubmit={data => console.log(data)}
-              render={({ handleUpload, uploads, ready }) => (
-                <div>
-                  <input
-                    type="file"
-                    disabled={!ready}
-                    onChange={e => handleUpload(e.currentTarget.files)}
-                  />
-                  {uploads.map(upload => {
-                    switch (upload.state) {
-                      case "waiting":
-                        return (
-                          <p key={upload.id}>
-                            Waiting to upload {upload.file.name}
-                          </p>
-                        );
-                      case "uploading":
-                        return (
-                          <p key={upload.id}>
-                            Uploading {upload.file.name}: {upload.progress}%
-                          </p>
-                        );
-                      case "error":
-                        return (
-                          <p key={upload.id}>
-                            Error uploading {upload.file.name}: {upload.error}
-                          </p>
-                        );
-                      case "finished":
-                        return (
-                          <p key={upload.id}>
-                            Finished uploading {upload.file.name}
-                          </p>
-                        );
-                      default:
-                        return;
-                    }
-                  })}
-                </div>
-              )}
+            <input
+              name="forms"
+              type="file"
+              multiple
+              onChange={this.handleFilesChange}
             />
+            <br />
+            <br />
             <input type="submit" value="Create Child" />
           </form>
         </div>
@@ -180,7 +159,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    newChild: childInfo => dispatch(newChild(childInfo))
+    newChild: childInfo => dispatch(createChild(childInfo))
   };
 };
 

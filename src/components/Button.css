@@ -11,7 +11,7 @@
 }
 
 .button a:nth-child(even) {
-  grid-column: 7/9;
+  grid-column: 8/10;
   width: 100px;
 }
 
