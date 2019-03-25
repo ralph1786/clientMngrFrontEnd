@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./ParentLoginForm.scss";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { loginProvider } from "../actions/authActions";
+import { loginParent } from "../actions/authActions";
 
 class LoginForm extends Component {
   state = {
@@ -18,13 +18,13 @@ class LoginForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.loginProvider(this.state);
+    this.props.loginParent(this.state);
   };
 
   render() {
-    console.log(this.props.parent);
+    // console.log(this.props.parent);
     return (
-      <div className="login animated flipInY">
+      <div className="parent-login animated flipInY">
         <h1>Welcome Parent</h1>
         <form onSubmit={this.handleSubmit}>
           <label>Username</label>
@@ -58,7 +58,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    loginProvider: providerObj => dispatch(loginProvider(providerObj))
+    loginParent: parentObj => dispatch(loginParent(parentObj))
   };
 };
 

@@ -8,6 +8,11 @@ const addParent = parentObj => ({
   payload: parentObj
 });
 
+export const setProvider = providerObj => ({
+  type: "SET_PROVIDER",
+  payload: providerObj
+});
+
 export const removeParent = parentObj => ({
   type: "LOGOUT_PARENT",
   payload: parentObj
@@ -20,7 +25,7 @@ export const removeProvider = providerObj => ({
 
 export const loginProvider = providerObj => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/login", {
+    return fetch("http://localhost:80/api/v1/login", {
       method: "POST",
       body: JSON.stringify({ provider: providerObj }),
       headers: {
@@ -40,7 +45,7 @@ export const loginProvider = providerObj => {
 
 export const loginParent = parentObj => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/login", {
+    return fetch("http://localhost:80/api/v1/parent_login", {
       method: "POST",
       body: JSON.stringify({ parent: parentObj }),
       headers: {

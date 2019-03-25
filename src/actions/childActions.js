@@ -15,7 +15,7 @@ const removeChild = id => ({
 
 export const allChildren = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/children")
+    return fetch("http://localhost:80/api/v1/children")
       .then(res => res.json())
       .then(res => dispatch(loadChildren(res)))
       .catch(err => console.log(err));
@@ -25,7 +25,7 @@ export const allChildren = () => {
 export const newChild = childInfo => {
   console.log(childInfo);
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/children", {
+    return fetch("http://localhost:80/api/v1/children", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export const newChild = childInfo => {
 
 export const deleteChild = id => {
   return dispatch => {
-    return fetch(`http://localhost:3000/api/v1/children/${id}`, {
+    return fetch(`http://localhost:80/api/v1/children/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

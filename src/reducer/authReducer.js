@@ -7,9 +7,12 @@ const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case "LOGIN_PROVIDER":
       return { ...state, provider: action.payload };
+    case "SET_PROVIDER":
+      return { ...state, provider: action.payload };
     case "LOGIN_PARENT":
       return { ...state, parent: action.payload };
     case "LOGOUT_PARENT":
+      console.log("from parent");
       localStorage.removeItem("token");
       return { ...state, parent: {} };
     case "LOGOUT_PROVIDER":

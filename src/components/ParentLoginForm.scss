@@ -1,0 +1,54 @@
+.parent-login {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+
+.parent-login h1 {
+  grid-column: 5/9;
+  text-align: center;
+}
+
+.parent-login form {
+  -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+  -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+  box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+  background-color: rgb(137, 253, 214);
+  grid-column: 5/9;
+  grid-row: 3/7;
+  text-align: center;
+  font-size: 2em;
+  margin: 10px;
+}
+
+.parent-login form label,
+.parent-login form input {
+  margin-top: 50px;
+  padding: 10px;
+  height: 18px;
+}
+
+.parent-login form input {
+  margin-left: 5px;
+  width: 50%;
+  font-size: 0.8em;
+  outline: none;
+}
+
+.parent-login form label {
+  color: rgb(80, 78, 78);
+}
+
+.parent-login form button {
+  width: 50%;
+  height: 10%;
+  font-size: 20px;
+  margin-top: 50px;
+  border-radius: 25px;
+}
+
+.parent-login form button:hover {
+  cursor: pointer;
+  background-color: rgb(243, 159, 159);
+  color: white;
+}

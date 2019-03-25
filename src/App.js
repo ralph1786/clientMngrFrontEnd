@@ -4,24 +4,36 @@ import Home from "./containers/Home";
 import LoginForm from "./components/LoginForm";
 import ParentLoginForm from "./components/ParentLoginForm";
 import Dashboard from "./containers/Dashboard";
+import ParentDashboard from "./containers/ParentDashboard";
 import CreateForm from "./components/CreateForm";
 import EditForm from "./components/EditForm.js";
 import Navbar from "./components/Navbar";
 import { connect } from "react-redux";
-import { loginProvider } from "./actions/authActions";
+// import { loginProvider } from "./actions/authActions";
+import { setProvider } from "./actions/authActions";
 
 import "./App.css";
 
 class App extends Component {
   // componentDidMount() {
   //   let token = localStorage.token;
-  //   if (token) {
-  //     this.props.loginProvider(this.props.provider.provider);
-  //   }
+  //   fetch("http://localhost:80/api/v1/dashboard", {
+  //     method: "GET",
+  //     headers: {
+  //       "content-type": "application/json",
+  //       accepts: "application/json",
+  //       Authorization: `Bearer ${token}`
+  //     }
+  //   })
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       console.log(res.provider);
+  //       // this.props.setProvider(res.provider);
+  //     });
   // }
 
   render() {
-    // console.log(this.props.provider.provider);
+    // console.log(this.props);
     return (
       <div>
         <Navbar />
@@ -53,7 +65,26 @@ class App extends Component {
               )
             }
           />
-          <Route path="/parent_dashboard" render={() => <ParentLoginForm />} />
+          <Route
+            path="/parent_login"
+            render={() =>
+              Object.keys(this.props.provider.parent).length > 0 ? (
+                <Redirect to="/parent_dashboard" />
+              ) : (
+                <ParentLoginForm />
+              )
+            }
+          />
+          <Route
+            path="/parent_dashboard"
+            render={() =>
+              localStorage.getItem("token") ? (
+                <ParentDashboard />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
+          />
           <Route path="/" component={Home} />
         </Switch>
       </div>
@@ -69,7 +100,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    loginProvider: providerObj => dispatch(loginProvider(providerObj))
+    setProvider: providerObj => dispatch(setProvider(providerObj))
   };
 };
 

@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { newChild } from "../actions/childActions";
 import { connect } from "react-redux";
+import ActiveStorageProvider, {
+  DirectUploadProvider
+} from "react-activestorage-provider";
 import "./CreateForm.scss";
 
 class CreateForm extends Component {
@@ -27,13 +30,6 @@ class CreateForm extends Component {
     // console.log(this.state);
     this.props.newChild(this.state);
   };
-
-  // selectedFileHandler = e => {
-  //   console.log(e.target.files[0]);
-  //   this.setState({
-  //     selectedFile: e.target.files[0]
-  //   });
-  // };
 
   render() {
     // console.log(this.props);
@@ -118,11 +114,56 @@ class CreateForm extends Component {
             />
             <br />
             <br />
-            {/* <input
-              type="file"
-              name="file"
-              onChange={this.selectedFileHandler}
-            /> */}
+            <ActiveStorageProvider
+              endpoint={{
+                path: "api/v1/children",
+                model: "Child",
+                attribute: "forms",
+                method: "POST",
+                host: "1b61a5ad.ngrok.io"
+              }}
+              multiple={true}
+              onSubmit={data => console.log(data)}
+              render={({ handleUpload, uploads, ready }) => (
+                <div>
+                  <input
+                    type="file"
+                    disabled={!ready}
+                    onChange={e => handleUpload(e.currentTarget.files)}
+                  />
+                  {uploads.map(upload => {
+                    switch (upload.state) {
+                      case "waiting":
+                        return (
+                          <p key={upload.id}>
+                            Waiting to upload {upload.file.name}
+                          </p>
+                        );
+                      case "uploading":
+                        return (
+                          <p key={upload.id}>
+                            Uploading {upload.file.name}: {upload.progress}%
+                          </p>
+                        );
+                      case "error":
+                        return (
+                          <p key={upload.id}>
+                            Error uploading {upload.file.name}: {upload.error}
+                          </p>
+                        );
+                      case "finished":
+                        return (
+                          <p key={upload.id}>
+                            Finished uploading {upload.file.name}
+                          </p>
+                        );
+                      default:
+                        return;
+                    }
+                  })}
+                </div>
+              )}
+            />
             <input type="submit" value="Create Child" />
           </form>
         </div>

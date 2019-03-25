@@ -11,7 +11,7 @@ const editChild = childObj => ({
 export const updateChild = childObj => {
   console.log(childObj);
   return dispatch => {
-    return fetch(`http://localhost:3000/api/v1/children/${childObj.id}`, {
+    return fetch(`http://localhost:80/api/v1/children/${childObj.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

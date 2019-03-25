@@ -6,6 +6,7 @@
     "axios": "^0.18.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.4",
+    "react-activestorage-provider": "^0.8.0",
     "react-dom": "^16.8.4",
     "react-image-gallery": "^0.8.14",
     "react-redux": "^6.0.1",

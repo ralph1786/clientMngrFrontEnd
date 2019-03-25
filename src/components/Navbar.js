@@ -15,9 +15,7 @@ const Navbar = props => {
         />
       </Link>
       {/* <span>{Object.keys(props.provider).length > 0 ? <LogOut /> : ""}</span> */}
-      <span>
-        {localStorage.getItem("token") ? <LogOut user={props} /> : ""}
-      </span>
+      <span>{localStorage.getItem("token") ? <LogOut /> : ""}</span>
       {/* <button onClick={() => localStorage.removeItem("token")}>
         clear localStorage
       </button> */}

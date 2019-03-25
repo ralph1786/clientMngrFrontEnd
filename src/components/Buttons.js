@@ -8,7 +8,7 @@ const Buttons = () => {
       <Link to="/login">
         <button className="btn-hover color-1">Provider</button>
       </Link>
-      <Link to="/parent_dashboard">
+      <Link to="/parent_login">
         <button className="btn-hover color-1">Parent</button>
       </Link>
     </div>
