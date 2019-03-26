@@ -29,7 +29,7 @@ class ParentDashboard extends Component {
   }
 
   renderChildren = () => {
-    console.log(this.props.parent);
+    // console.log(this.props.parent);
     if (this.props.parent.children !== undefined) {
       let myChildren = this.props.parent.children.map(child => (
         <ChildCard key={child.id} child={child} />

@@ -32,9 +32,15 @@ class EditForm extends Component {
     // console.log(this.state);
     return (
       <React.Fragment>
-        <Link to="/dashboard">
-          <button id="button-edit">Dashboard</button>
-        </Link>
+        {this.props.location.pathname === "/edit" ? (
+          <Link to="/dashboard">
+            <button id="button-edit">Dashboard</button>
+          </Link>
+        ) : (
+          <Link to="/parent_dashboard">
+            <button id="button-edit">Dashboard</button>
+          </Link>
+        )}
         <div className="edit-form animated flipInY">
           <br />
           <br />

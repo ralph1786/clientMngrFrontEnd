@@ -6,7 +6,7 @@ import { Link, withRouter } from "react-router-dom";
 import "./ChildCard.scss";
 
 const ChildCard = props => {
-  // console.log(props);
+  console.log(props);
   // console.log(props.editChild);
   const { name, age, image, address, allergies, balance } = props.child;
   return (
@@ -17,13 +17,26 @@ const ChildCard = props => {
       <address>Address: {address}</address>
       <p>Allergies: {allergies}</p>
       <p>Balance: ${balance}</p>
-      <Link to="/edit">
-        <button onClick={() => props.selectedChild(props.child)}>Edit</button>
-      </Link>
+      {props.location.pathname === "/dashboard" ? (
+        <Link to="/edit">
+          <button onClick={() => props.selectedChild(props.child)}>
+            Edit Provider
+          </button>
+        </Link>
+      ) : (
+        <Link to="/edit_parent">
+          <button onClick={() => props.selectedChild(props.child)}>
+            Edit Parent
+          </button>
+        </Link>
+      )}
       {props.location.pathname === "/parent_dashboard" ? (
         <Link to="/payment_modal">
           <button
-            style={{ outline: "none" }}
+            id="make_payment"
+            style={{
+              outline: "none"
+            }}
             onClick={() => props.selectedChild(props.child)}
           >
             Make Payment

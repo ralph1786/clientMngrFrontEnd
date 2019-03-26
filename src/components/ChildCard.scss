@@ -27,6 +27,7 @@
   background-color: orange;
   color: white;
   cursor: pointer;
+  transition: all 0.4s ease-in;
 }
 
 .child-card button:nth-child(even) {
@@ -39,4 +40,11 @@
   background-color: rgb(248, 44, 44);
   color: white;
   cursor: pointer;
+  transition: all 0.4s ease-in;
+}
+
+.child-card #make_payment:hover {
+  background-color: rgb(41, 125, 237);
+  color: white;
+  transition: all 0.4s ease-in;
 }

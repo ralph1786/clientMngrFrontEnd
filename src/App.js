@@ -58,6 +58,7 @@ class App extends Component {
           />
           <Route path="/create" render={() => <CreateForm />} />
           <Route path="/edit" render={() => <EditForm />} />
+          <Route path="/edit_parent" render={() => <EditForm />} />
           <Route
             path="/dashboard"
             render={() =>
