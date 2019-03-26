@@ -11,31 +11,32 @@ import Navbar from "./components/Navbar";
 import { connect } from "react-redux";
 // import { loginProvider } from "./actions/authActions";
 import { setProvider } from "./actions/authActions";
+import PaymentModal from "./components/PaymentModal";
 
 import "./App.css";
 
 class App extends Component {
-  // componentDidMount() {
-  //   let token = localStorage.token;
-  //   fetch("http://localhost:80/api/v1/dashboard", {
-  //     method: "GET",
-  //     headers: {
-  //       "content-type": "application/json",
-  //       accepts: "application/json",
-  //       Authorization: `Bearer ${token}`
-  //     }
-  //   })
-  //     .then(res => res.json())
-  //     .then(res => {
-  //       // console.log(res.provider);
-  //       if (res.error) {
-  //         return <Redirect to="/login" />;
-  //       } else {
-  //         this.props.setProvider(res.provider);
-  //       }
-  //     })
-  //     .catch(err => console.log(err));
-  // }
+  componentDidMount() {
+    let token = localStorage.token;
+    fetch("http://localhost:80/api/v1/dashboard", {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        accepts: "application/json",
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        // console.log(res.provider);
+        if (res.error) {
+          return <Redirect to="/login" />;
+        } else {
+          this.props.setProvider(res.provider);
+        }
+      })
+      .catch(err => console.log(err));
+  }
 
   render() {
     // console.log(this.props.provider.provider);
@@ -90,6 +91,7 @@ class App extends Component {
               )
             }
           />
+          <Route path="/payment_modal" render={() => <PaymentModal />} />
           <Route path="/" component={Home} />
         </Switch>
       </div>

@@ -8,6 +8,10 @@ const editChild = childObj => ({
   payload: childObj
 });
 
+export const openModal = () => ({
+  type: "OPEN_MODAL"
+});
+
 export const updateChild = childObj => {
   console.log(childObj);
   return dispatch => {

@@ -21,7 +21,9 @@ const ChildCard = props => {
         <button onClick={() => props.selectedChild(props.child)}>Edit</button>
       </Link>
       {props.location.pathname === "/parent_dashboard" ? (
-        <button style={{ outline: "none" }}>Make Payment</button>
+        <Link to="/payment_modal">
+          <button style={{ outline: "none" }}>Make Payment</button>
+        </Link>
       ) : (
         <button onClick={() => props.deleteChild(props.child.id)}>
           Delete
