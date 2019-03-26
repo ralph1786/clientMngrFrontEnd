@@ -17,11 +17,11 @@
 }
 
 .navbar img {
-  width: 100px;
-  height: 100px;
-  border-radius: 25px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   grid-column: 1/2;
-  margin: 20px;
+  margin: 5px 0px 5px 10px;
 }
 
 .navbar span {
@@ -33,7 +33,16 @@
   outline: none;
 }
 
+.navbar button {
+  padding: 5px;
+  font-size: 1.1em;
+  outline: none;
+  border-radius: 15px;
+}
+
 .navbar button:hover {
   cursor: pointer;
-  background-color: rgb(209, 208, 208);
+  background-color: rgb(153, 150, 150);
+  color: #a8ff78;
+  transition: all 0.5s ease-in;
 }

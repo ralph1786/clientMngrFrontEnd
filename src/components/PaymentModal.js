@@ -42,10 +42,30 @@ class PaymentModal extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
-    this.setState({
-      isModalOpen: false
-    });
+    let currentBalance = this.props.selectedChild.balance;
+    let payAmount = this.state.amount;
+    let newBalance = currentBalance - payAmount;
+    // console.log(newBalance);
+    fetch(
+      `http://localhost:80/api/v1/children/${this.props.selectedChild.id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({ balance: newBalance })
+      }
+    )
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        this.setState({
+          isModalOpen: false
+        });
+        this.props.history.push("/parent_dashboard");
+      })
+      .catch(err => console.log(err));
   };
 
   componentWillMount() {
@@ -59,7 +79,8 @@ class PaymentModal extends Component {
   };
 
   render() {
-    console.log(this.props);
+    console.log("child id", this.props.selectedChild.id);
+    // console.log(this.state.amount);
     return (
       <div>
         <Modal
@@ -67,6 +88,12 @@ class PaymentModal extends Component {
           style={customStyles}
           // onRequestClose={this.closeModal}
         >
+          <span
+            className="close-button"
+            onClick={() => this.props.history.push("/parent_dashboard")}
+          >
+            X
+          </span>
           <form className="payment-form" onSubmit={this.handleSubmit}>
             <img
               src="https://www.wrenvironmental.com/wp-content/uploads/2018/09/major-credit-card-logos-png-5.png"
@@ -120,4 +147,10 @@ class PaymentModal extends Component {
   }
 }
 
-export default withRouter(connect()(PaymentModal));
+const mapStateToProps = state => {
+  return {
+    selectedChild: state.editChild
+  };
+};
+
+export default withRouter(connect(mapStateToProps)(PaymentModal));
