@@ -9,7 +9,7 @@ import "./ChildrenList.scss";
 class ChildrenList extends Component {
   state = {
     searchWord: "",
-    filteredList: []
+    filteredList: this.props.children
   };
 
   componentDidMount() {

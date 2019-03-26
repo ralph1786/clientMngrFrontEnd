@@ -19,15 +19,11 @@ const ChildCard = props => {
       <p>Balance: ${balance}</p>
       {props.location.pathname === "/dashboard" ? (
         <Link to="/edit">
-          <button onClick={() => props.selectedChild(props.child)}>
-            Edit Provider
-          </button>
+          <button onClick={() => props.selectedChild(props.child)}>Edit</button>
         </Link>
       ) : (
         <Link to="/edit_parent">
-          <button onClick={() => props.selectedChild(props.child)}>
-            Edit Parent
-          </button>
+          <button onClick={() => props.selectedChild(props.child)}>Edit</button>
         </Link>
       )}
       {props.location.pathname === "/parent_dashboard" ? (
