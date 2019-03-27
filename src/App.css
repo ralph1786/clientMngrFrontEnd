@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Lora|Merienda|Ubuntu");
+
 button {
   outline: none;
+}
+
+body {
+  font-family: "Ubuntu", cursive;
 }

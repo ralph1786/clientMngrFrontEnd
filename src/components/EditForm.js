@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { updateChild } from "../actions/editActions";
+import { toast } from "react-toastify";
 import { connect } from "react-redux";
 import "./EditForm.scss";
 
@@ -25,6 +26,9 @@ class EditForm extends Component {
     e.preventDefault();
     // console.log(this.state);
     this.props.updateChild(this.state);
+    toast.warning(`${this.state.name} was edited!`, {
+      position: toast.POSITION.BOTTOM_CENTER
+    });
     // this.props.history.push("/parent_dashboard");
   };
 

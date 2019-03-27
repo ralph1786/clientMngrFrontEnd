@@ -99,7 +99,7 @@ class App extends Component {
           <Route path="/payment_modal" render={() => <PaymentModal />} />
           <Route path="/" component={Home} />
         </Switch>
-        <ToastContainer autoClose={3500} />
+        <ToastContainer autoClose={3000} />
       </div>
     );
   }

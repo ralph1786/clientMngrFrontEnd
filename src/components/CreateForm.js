@@ -4,6 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import { createChild } from "../actions/childActions";
 import { connect } from "react-redux";
 import "./CreateForm.scss";
+import { toast } from "react-toastify";
 
 class CreateForm extends Component {
   state = {
@@ -49,12 +50,18 @@ class CreateForm extends Component {
       body: data
     })
       .then(res => res.json())
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res);
+        toast.success("Successfully created!", {
+          position: toast.POSITION.BOTTOM_CENTER
+        });
+      })
       .catch(err => console.log(err));
   };
 
   render() {
-    // console.log(this.props);
+    console.log(this.props);
+
     return (
       <div>
         <Link to="/dashboard">

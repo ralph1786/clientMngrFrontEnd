@@ -28,7 +28,7 @@ class ChildrenList extends Component {
   };
 
   childrenFilteredList = () => {
-    const listChildren = this.state.filteredList
+    const listChildren = this.props.children
       .sort((a, b) => (a.name > b.name ? 1 : -1))
       .map(child => <ChildCard key={child.id} child={child} />);
     return listChildren;

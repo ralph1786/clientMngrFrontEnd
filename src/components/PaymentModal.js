@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Modal from "react-modal";
+import { toast } from "react-toastify";
 import "./PaymentModal.scss";
 
 const customStyles = {
@@ -34,12 +35,6 @@ class PaymentModal extends Component {
     cvv: ""
   };
 
-  // closeModal = () => {
-  //   this.setState({
-  //     isModalOpen: false
-  //   });
-  // };
-
   handleSubmit = e => {
     e.preventDefault();
     let currentBalance = this.props.selectedChild.balance;
@@ -59,7 +54,9 @@ class PaymentModal extends Component {
     )
       .then(res => res.json())
       .then(res => {
-        console.log(res);
+        toast.info("Payment Successful", {
+          position: toast.POSITION.BOTTOM_CENTER
+        });
         this.setState({
           isModalOpen: false
         });

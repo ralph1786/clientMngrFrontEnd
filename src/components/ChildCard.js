@@ -6,7 +6,7 @@ import { Link, withRouter } from "react-router-dom";
 import "./ChildCard.scss";
 
 const ChildCard = props => {
-  console.log(props);
+  // console.log(props);
   // console.log(props.editChild);
   const { name, age, image, address, allergies, balance } = props.child;
   return (
