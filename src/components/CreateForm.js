@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter, Redirect } from "react-router-dom";
 // import { newChild } from "../actions/childActions";
 import { createChild } from "../actions/childActions";
 import { connect } from "react-redux";
 import "./CreateForm.scss";
 import { toast } from "react-toastify";
+import { setProvider } from "../actions/authActions";
 
 class CreateForm extends Component {
   state = {
@@ -24,6 +25,32 @@ class CreateForm extends Component {
       [e.target.name]: e.target.value
     });
   };
+  componentDidMount() {
+    let token = localStorage.token;
+    if (token) {
+      fetch("http://localhost:80/api/v1/dashboard", {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          accepts: "application/json",
+          Authorization: `Bearer ${token}`
+        }
+      })
+        .then(res => res.json())
+        .then(res => {
+          console.log(res.provider);
+          if (res.error) {
+            return <Redirect to="/login" />;
+          } else {
+            this.props.setProvider(res.provider);
+            this.setState({
+              provider_id: res.provider.id
+            });
+          }
+        })
+        .catch(err => console.log(err));
+    }
+  }
 
   handleFilesChange = e => {
     this.setState({
@@ -33,8 +60,6 @@ class CreateForm extends Component {
 
   handleCreateSubmit = e => {
     e.preventDefault();
-    // console.log(this.state);
-    // this.props.newChild(this.state);
     const data = new FormData();
     for (let key in this.state) {
       if (key === "forms") {
@@ -60,8 +85,8 @@ class CreateForm extends Component {
   };
 
   render() {
-    console.log(this.props);
-
+    // console.log(this.props.provider.provider);
+    console.log(this.state.provider_id);
     return (
       <div>
         <Link to="/dashboard">
@@ -125,15 +150,6 @@ class CreateForm extends Component {
             />
             <br />
             <br />
-            <label>Provider ID</label>
-            <input
-              name="provider_id"
-              type="number"
-              value={this.state.provider_id}
-              onChange={this.handleChange}
-            />
-            <br />
-            <br />
             <label>Parent ID</label>
             <input
               name="parent_id"
@@ -151,7 +167,11 @@ class CreateForm extends Component {
             />
             <br />
             <br />
-            <input type="submit" value="Create Child" />
+            <input
+              style={{ outline: "none" }}
+              type="submit"
+              value="Create Child"
+            />
           </form>
         </div>
       </div>
@@ -161,13 +181,14 @@ class CreateForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    provider: state
+    provider: state.provider
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    newChild: childInfo => dispatch(createChild(childInfo))
+    newChild: childInfo => dispatch(createChild(childInfo)),
+    setProvider: providerObj => dispatch(setProvider(providerObj))
   };
 };
 
