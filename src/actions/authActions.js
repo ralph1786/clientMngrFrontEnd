@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const addProvider = providerObj => ({
   type: "LOGIN_PROVIDER",
   payload: providerObj
@@ -38,6 +40,9 @@ export const loginProvider = providerObj => {
         // console.log(res);
         localStorage.setItem("token", res.jwt);
         dispatch(addProvider(res.provider));
+        toast.success(`Welcome back ${res.provider.username}`, {
+          position: toast.POSITION.BOTTOM_CENTER
+        });
       })
       .catch(err => console.log(err));
   };
@@ -58,6 +63,9 @@ export const loginParent = parentObj => {
         // console.log(res);
         localStorage.setItem("token", res.jwt);
         dispatch(addParent(res.parent));
+        toast.success(`Welcome back ${res.parent.name}`, {
+          position: toast.POSITION.BOTTOM_CENTER
+        });
       })
       .catch(err => console.log(err));
   };

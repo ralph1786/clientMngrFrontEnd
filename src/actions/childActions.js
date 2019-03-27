@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const loadChildren = children => ({
   type: "LOAD_CHILDREN",
   payload: children
@@ -52,7 +54,12 @@ export const deleteChild = id => {
       }
     })
       .then(res => res.json())
-      .then(res => dispatch(removeChild(res.id)))
+      .then(res => {
+        dispatch(removeChild(res.id));
+        toast.error("Child Deleted!", {
+          position: toast.POSITION.BOTTOM_CENTER
+        });
+      })
       .catch(err => console.log(err));
   };
 };

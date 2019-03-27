@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export const selectedChild = childObj => ({
   type: "SELECTED_CHILD",
   payload: childObj
@@ -24,7 +26,12 @@ export const updateChild = childObj => {
       body: JSON.stringify(childObj)
     })
       .then(res => res.json())
-      .then(res => dispatch(editChild(res)))
+      .then(res => {
+        dispatch(editChild(res));
+        toast.warning(`${res.name} was edited!`, {
+          position: toast.POSITION.BOTTOM_CENTER
+        });
+      })
       .catch(err => console.log(err));
   };
 };

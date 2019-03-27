@@ -12,6 +12,8 @@ import { connect } from "react-redux";
 // import { loginProvider } from "./actions/authActions";
 // import { setProvider } from "./actions/authActions";
 import PaymentModal from "./components/PaymentModal";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "./App.css";
 
@@ -97,6 +99,7 @@ class App extends Component {
           <Route path="/payment_modal" render={() => <PaymentModal />} />
           <Route path="/" component={Home} />
         </Switch>
+        <ToastContainer autoClose={3500} />
       </div>
     );
   }

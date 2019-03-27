@@ -9,7 +9,7 @@ import "./ChildrenList.scss";
 class ChildrenList extends Component {
   state = {
     searchWord: "",
-    filteredList: this.props.children
+    filteredList: []
   };
 
   componentDidMount() {
@@ -24,13 +24,17 @@ class ChildrenList extends Component {
       searchWord: e.target.value,
       filteredList: newArray
     });
+    return newArray;
+  };
+
+  childrenFilteredList = () => {
+    const listChildren = this.state.filteredList
+      .sort((a, b) => (a.name > b.name ? 1 : -1))
+      .map(child => <ChildCard key={child.id} child={child} />);
+    return listChildren;
   };
 
   render() {
-    const listChildren = this.props.children
-      .sort((a, b) => (a.name > b.name ? 1 : -1))
-      .map(child => <ChildCard key={child.id} child={child} />);
-
     return (
       <div>
         <div className="search-bar">
@@ -39,7 +43,7 @@ class ChildrenList extends Component {
             onChange={this.changeHandler}
           />
         </div>
-        <div className="children-list">{listChildren}</div>
+        <div className="children-list">{this.childrenFilteredList()}</div>
       </div>
     );
   }

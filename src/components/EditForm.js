@@ -21,14 +21,15 @@ class EditForm extends Component {
     });
   };
 
-  handleCreateSubmit = e => {
+  handleEditSubmit = e => {
     e.preventDefault();
     // console.log(this.state);
     this.props.updateChild(this.state);
+    // this.props.history.push("/parent_dashboard");
   };
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     // console.log(this.state);
     return (
       <React.Fragment>
@@ -44,7 +45,7 @@ class EditForm extends Component {
         <div className="edit-form animated flipInY">
           <br />
           <br />
-          <form onSubmit={this.handleCreateSubmit}>
+          <form onSubmit={this.handleEditSubmit}>
             <label>Name</label>
             <input
               name="name"
@@ -90,15 +91,21 @@ class EditForm extends Component {
             />
             <br />
             <br />
-            <label>Balance</label>
-            <input
-              name="balance"
-              type="text"
-              value={this.state.balance}
-              onChange={this.handleChange}
-            />
-            <br />
-            <br />
+            {this.props.location.pathname === "/edit_parent" ? (
+              " "
+            ) : (
+              <React.Fragment>
+                <label>Balance</label>
+                <input
+                  name="balance"
+                  type="text"
+                  value={this.state.balance}
+                  onChange={this.handleChange}
+                />
+                <br />
+                <br />
+              </React.Fragment>
+            )}
             <input type="submit" value="Edit Child" />
           </form>
         </div>
