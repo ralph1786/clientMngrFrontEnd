@@ -110,7 +110,11 @@ class EditForm extends Component {
                 <br />
               </React.Fragment>
             )}
-            <input type="submit" value="Edit Child" />
+            <input
+              style={{ outline: "none" }}
+              type="submit"
+              value="Edit Child"
+            />
           </form>
         </div>
       </React.Fragment>

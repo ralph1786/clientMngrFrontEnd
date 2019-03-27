@@ -8,8 +8,7 @@ import "./ChildrenList.scss";
 
 class ChildrenList extends Component {
   state = {
-    searchWord: "",
-    filteredList: []
+    searchWord: ""
   };
 
   componentDidMount() {
@@ -17,18 +16,16 @@ class ChildrenList extends Component {
   }
 
   changeHandler = e => {
-    let newArray = this.props.children.filter(child =>
-      child.name.toLowerCase().includes(e.target.value.toLowerCase())
-    );
     this.setState({
-      searchWord: e.target.value,
-      filteredList: newArray
+      searchWord: e.target.value
     });
-    return newArray;
   };
 
   childrenFilteredList = () => {
     const listChildren = this.props.children
+      .filter(child =>
+        child.name.toLowerCase().includes(this.state.searchWord.toLowerCase())
+      )
       .sort((a, b) => (a.name > b.name ? 1 : -1))
       .map(child => <ChildCard key={child.id} child={child} />);
     return listChildren;
