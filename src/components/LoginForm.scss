@@ -7,6 +7,7 @@
 .login h1 {
   grid-column: 5/9;
   text-align: center;
+  grid-row: 3/4;
 }
 
 .login form {
@@ -15,7 +16,7 @@
   box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
   background-color: rgb(32, 221, 158);
   grid-column: 5/9;
-  grid-row: 3/7;
+  grid-row: 4/8;
   text-align: center;
   font-size: 2em;
   margin: 10px;

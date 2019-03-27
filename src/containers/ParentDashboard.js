@@ -40,10 +40,17 @@ class ParentDashboard extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h2>Welcome, {this.props.parent.name}</h2>
+      <div>
+        <div />
+        <br />
+        <br />
+        <div>
+          <h1>Welcome, {this.props.parent.name}</h1>
+        </div>
+        <br />
+        <br />
         <div className="parent-dashboard">{this.renderChildren()}</div>
-      </React.Fragment>
+      </div>
     );
   }
 }

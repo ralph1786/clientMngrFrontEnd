@@ -86,7 +86,6 @@ class CreateForm extends Component {
 
   render() {
     // console.log(this.props.provider.provider);
-    console.log(this.state.provider_id);
     return (
       <div>
         <Link to="/dashboard">
