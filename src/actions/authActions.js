@@ -45,7 +45,7 @@ export const loginProvider = providerObj => {
         });
       })
       .catch(err => {
-        toast.error("Please verify username or password.", {
+        toast.error("Wrong username or password!", {
           position: toast.POSITION.BOTTOM_CENTER
         });
         console.log(err);
@@ -73,7 +73,7 @@ export const loginParent = parentObj => {
         });
       })
       .catch(err => {
-        toast.error("Please verify username or password.", {
+        toast.error("Wrong username or password!", {
           position: toast.POSITION.BOTTOM_CENTER
         });
         console.log(err);
