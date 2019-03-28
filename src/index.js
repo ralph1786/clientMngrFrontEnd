@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunk from "redux-thunk";
 import { BrowserRouter as Router } from "react-router-dom";
+import ErrorBoundary from "./components/ErrorBoundary";
 import "./index.css";
 import App from "./App";
 import authReducer from "./reducer/authReducer";
@@ -20,9 +21,11 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
+    <ErrorBoundary>
+      <Router>
+        <App />
+      </Router>
+    </ErrorBoundary>
   </Provider>,
   document.getElementById("root")
 );

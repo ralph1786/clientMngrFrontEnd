@@ -44,7 +44,12 @@ export const loginProvider = providerObj => {
           position: toast.POSITION.BOTTOM_CENTER
         });
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        toast.error("Please verify username or password.", {
+          position: toast.POSITION.BOTTOM_CENTER
+        });
+        console.log(err);
+      });
   };
 };
 
@@ -67,6 +72,11 @@ export const loginParent = parentObj => {
           position: toast.POSITION.BOTTOM_CENTER
         });
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        toast.error("Please verify username or password.", {
+          position: toast.POSITION.BOTTOM_CENTER
+        });
+        console.log(err);
+      });
   };
 };

@@ -51,10 +51,11 @@ class App extends Component {
           <Route
             path="/login"
             render={() =>
-              Object.keys(this.props.provider.provider).length > 0 ? (
-                <Redirect to="/dashboard" />
-              ) : (
+              this.props.provider.provider === undefined ||
+              Object.keys(this.props.provider.provider).length < 1 ? (
                 <LoginForm />
+              ) : (
+                <Redirect to="/dashboard" />
               )
             }
           />
@@ -79,10 +80,11 @@ class App extends Component {
           <Route
             path="/parent_login"
             render={() =>
-              Object.keys(this.props.provider.parent).length > 0 ? (
-                <Redirect to="/parent_dashboard" />
-              ) : (
+              this.props.provider.parent === undefined ||
+              Object.keys(this.props.provider.parent).length < 1 ? (
                 <ParentLoginForm />
+              ) : (
+                <Redirect to="/parent_dashboard" />
               )
             }
           />
