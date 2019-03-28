@@ -19,6 +19,10 @@ class LoginForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.loginParent(this.state);
+    this.setState({
+      username: "",
+      password: ""
+    });
   };
 
   render() {

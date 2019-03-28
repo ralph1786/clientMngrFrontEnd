@@ -65,11 +65,6 @@ class App extends Component {
           <Route
             path="/dashboard"
             render={() =>
-              // Object.keys(this.props.provider.provider).length > 0 ? (
-              //   <Dashboard />
-              // ) : (
-              //   <Redirect to="/" />
-              // )
               localStorage.getItem("token") ? (
                 <Dashboard />
               ) : (
