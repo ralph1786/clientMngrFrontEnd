@@ -86,6 +86,7 @@ class CreateForm extends Component {
 
   render() {
     // console.log(this.props.provider.provider);
+    console.log(this.state);
     return (
       <div>
         <Link to="/dashboard">
@@ -93,7 +94,6 @@ class CreateForm extends Component {
         </Link>
         <br />
         <br />
-        <ParentSelect />
         <div className="create-form animated flipInY">
           <form onSubmit={this.handleCreateSubmit}>
             <label>Name</label>
@@ -150,12 +150,11 @@ class CreateForm extends Component {
             />
             <br />
             <br />
-            <label>Parent ID</label>
-            <input
+            <label>Parent</label>
+            <ParentSelect
               name="parent_id"
-              type="number"
               value={this.state.parent_id}
-              onChange={this.handleChange}
+              handleSelectChange={this.handleChange}
             />
             <br />
             <br />

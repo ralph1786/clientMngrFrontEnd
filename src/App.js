@@ -89,7 +89,7 @@ class App extends Component {
               localStorage.getItem("token") ? (
                 <ParentDashboard />
               ) : (
-                <Redirect to="/" />
+                <Redirect to="/parent_login" />
               )
             }
           />

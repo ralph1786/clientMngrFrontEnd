@@ -4,11 +4,6 @@
   grid-template-rows: repeat(12, 1fr);
 }
 
-// .login h1 {
-//   grid-column: 5/9;
-//   text-align: center;
-// }
-
 .create-form form {
   -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
   -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
@@ -29,6 +24,15 @@
   height: 15px;
 }
 
+.create-form form {
+  label:last-of-type {
+    margin-right: 40px;
+  }
+  select {
+    margin-left: 10px;
+    width: 45%;
+  }
+}
 .create-form form input[type="text"],
 .create-form form input[type="number"] {
   //   margin-left: 5px;

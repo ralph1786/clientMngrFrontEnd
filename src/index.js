@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
   provider: authReducer,
   children: childReducer,
   editChild: editReducer,
-  parent: parentReducer
+  parents: parentReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
