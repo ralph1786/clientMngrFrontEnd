@@ -21,7 +21,7 @@ class LoginForm extends Component {
     this.props.loginProvider(this.state);
     this.setState({
       username: "",
-      password: " "
+      password: ""
     });
   };
 
