@@ -10,11 +10,13 @@ import App from "./App";
 import authReducer from "./reducer/authReducer";
 import childReducer from "./reducer/childReducer";
 import editReducer from "./reducer/editReducer";
+import parentReducer from "./reducer/parentReducer";
 
 const rootReducer = combineReducers({
   provider: authReducer,
   children: childReducer,
-  editChild: editReducer
+  editChild: editReducer,
+  parent: parentReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

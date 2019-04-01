@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link, withRouter, Redirect } from "react-router-dom";
-// import { newChild } from "../actions/childActions";
 import { createChild } from "../actions/childActions";
 import { connect } from "react-redux";
 import "./CreateForm.scss";
 import { toast } from "react-toastify";
 import { setProvider } from "../actions/authActions";
+import ParentSelect from "./ParentSelect";
 
 class CreateForm extends Component {
   state = {
@@ -93,6 +93,7 @@ class CreateForm extends Component {
         </Link>
         <br />
         <br />
+        <ParentSelect />
         <div className="create-form animated flipInY">
           <form onSubmit={this.handleCreateSubmit}>
             <label>Name</label>
