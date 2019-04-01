@@ -9,11 +9,17 @@ class ParentSelect extends Component {
   }
 
   render() {
-    console.log(this.props.parents);
+    // console.log(this.props);
+    const { name, value, handleSelectChange } = this.props;
+    const listParents = this.props.parents.map(parent => (
+      <option key={parent.id} value={parent.id}>
+        {parent.name}
+      </option>
+    ));
     return (
-      <div>
-        <h2>hello</h2>
-      </div>
+      <select name={name} value={value} onChange={handleSelectChange}>
+        {listParents}
+      </select>
     );
   }
 }
