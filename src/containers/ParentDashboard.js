@@ -8,24 +8,26 @@ import "./ParentDashboard.scss";
 class ParentDashboard extends Component {
   componentDidMount() {
     let token = localStorage.token;
-    fetch("http://localhost:80/api/v1//parent_dashboard", {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-        accepts: "application/json",
-        Authorization: `Bearer ${token}`
-      }
-    })
-      .then(res => res.json())
-      .then(res => {
-        console.log(res.parent);
-        if (res.error) {
-          return <Redirect to="/login" />;
-        } else {
-          this.props.addParent(res.parent);
+    if (token) {
+      fetch("http://localhost:80/api/v1//parent_dashboard", {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          accepts: "application/json",
+          Authorization: `Bearer ${token}`
         }
       })
-      .catch(err => console.log(err));
+        .then(res => res.json())
+        .then(res => {
+          console.log(res.parent);
+          if (res.error) {
+            return <Redirect to="/login" />;
+          } else {
+            this.props.addParent(res.parent);
+          }
+        })
+        .catch(err => console.log(err));
+    }
   }
 
   renderChildren = () => {
