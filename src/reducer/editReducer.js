@@ -5,13 +5,10 @@ const editReducer = (state = initialState, action) => {
     case "SELECTED_CHILD":
       return action.payload;
     case "EDIT_CHILD":
-      const editedChildren = state.map(child => {
-        if (child.id === action.payload.id) {
-          return { ...child, ...action.payload };
-        } else {
-          return child;
-        }
-      });
+      const editedChildren =
+        state.id === action.payload.id
+          ? { ...state, ...action.payload }
+          : state;
       return editedChildren;
     default:
       return state;
