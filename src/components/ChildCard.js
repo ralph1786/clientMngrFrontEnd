@@ -40,7 +40,7 @@ const ChildCard = props => {
         </Link>
       ) : (
         <button onClick={() => props.deleteChild(props.child.id)}>
-          Delete
+          Remove
         </button>
       )}
     </div>
