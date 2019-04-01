@@ -77,7 +77,7 @@ class PaymentModal extends Component {
   };
 
   render() {
-    console.log("child id", this.props.selectedChild.id);
+    // console.log("child id", this.props.selectedChild.id);
     // console.log(this.state.amount);
     return (
       <div>
