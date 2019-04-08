@@ -46,20 +46,22 @@ export const allChildren = () => {
 
 export const deleteChild = id => {
   return dispatch => {
-    return fetch(`http://localhost:80/api/v1/children/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      }
-    })
-      .then(res => res.json())
-      .then(res => {
-        dispatch(removeChild(res.id));
-        toast.error("Child Deleted!", {
-          position: toast.POSITION.BOTTOM_CENTER
-        });
+    return (
+      fetch(`http://localhost:80/api/v1/children/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        }
       })
-      .catch(err => console.log(err));
+        // .then(res => res.json())
+        .then(res => {
+          dispatch(removeChild(res.id));
+          toast.error("Child Deleted!", {
+            position: toast.POSITION.BOTTOM_CENTER
+          });
+        })
+        .catch(err => console.log(err))
+    );
   };
 };
