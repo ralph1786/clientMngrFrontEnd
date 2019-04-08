@@ -18,32 +18,8 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 class App extends Component {
-  // componentDidMount() {
-  //   let token = localStorage.token;
-  //   if (token) {
-  //     fetch("http://localhost:80/api/v1/dashboard", {
-  //       method: "GET",
-  //       headers: {
-  //         "content-type": "application/json",
-  //         accepts: "application/json",
-  //         Authorization: `Bearer ${token}`
-  //       }
-  //     })
-  //       .then(res => res.json())
-  //       .then(res => {
-  //         // console.log(res.provider);
-  //         if (res.error) {
-  //           return <Redirect to="/login" />;
-  //         } else {
-  //           this.props.setProvider(res.provider);
-  //         }
-  //       })
-  //       .catch(err => console.log(err));
-  //   }
-  // }
-
   render() {
-    // console.log(this.props.provider.provider);
+    // console.log(this.props.history);
     return (
       <div>
         <Navbar />
@@ -89,7 +65,8 @@ class App extends Component {
               localStorage.getItem("token") ? (
                 <ParentDashboard />
               ) : (
-                <Redirect to="/parent_login" />
+                <Redirect to="/" />
+                // this.props.history.push("/parent_login")
               )
             }
           />
