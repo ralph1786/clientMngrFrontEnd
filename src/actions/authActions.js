@@ -37,17 +37,20 @@ export const loginProvider = providerObj => {
     })
       .then(res => res.json())
       .then(res => {
-        // console.log(res);
-        localStorage.setItem("token", res.jwt);
-        dispatch(addProvider(res.provider));
-        toast.success(`Welcome back ${res.provider.username}`, {
-          position: toast.POSITION.BOTTOM_CENTER
-        });
+        if (res.jwt === undefined) {
+          localStorage.clear();
+          toast.error("Wrong username or password!", {
+            position: toast.POSITION.BOTTOM_CENTER
+          });
+        } else {
+          localStorage.setItem("token", res.jwt);
+          dispatch(addProvider(res.provider));
+          toast.success(`Welcome back ${res.provider.username}`, {
+            position: toast.POSITION.BOTTOM_CENTER
+          });
+        }
       })
       .catch(err => {
-        toast.error("Wrong username or password!", {
-          position: toast.POSITION.BOTTOM_CENTER
-        });
         console.log(err);
       });
   };
@@ -66,16 +69,20 @@ export const loginParent = parentObj => {
       .then(res => res.json())
       .then(res => {
         // console.log(res);
-        localStorage.setItem("token", res.jwt);
-        dispatch(addParent(res.parent));
-        toast.success(`Welcome back ${res.parent.name}`, {
-          position: toast.POSITION.BOTTOM_CENTER
-        });
+        if (res.jwt === undefined) {
+          localStorage.clear();
+          toast.error("Wrong username or password!", {
+            position: toast.POSITION.BOTTOM_CENTER
+          });
+        } else {
+          localStorage.setItem("token", res.jwt);
+          dispatch(addParent(res.parent));
+          toast.success(`Welcome back ${res.parent.name}`, {
+            position: toast.POSITION.BOTTOM_CENTER
+          });
+        }
       })
       .catch(err => {
-        toast.error("Wrong username or password!", {
-          position: toast.POSITION.BOTTOM_CENTER
-        });
         console.log(err);
       });
   };
