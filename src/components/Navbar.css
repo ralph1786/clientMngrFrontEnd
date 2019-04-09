@@ -19,12 +19,28 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.navbar img {
+/* .navbar img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   grid-column: 1/2;
   margin: 5px 0px 5px 30px;
+} */
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar h2:hover {
+  color: rgb(250, 127, 250);
+  transform: scale(1.05);
+  transition: all 0.4s ease-in;
+}
+
+.navbar h2 {
+  color: rgb(231, 56, 231);
+  margin-left: 30px;
+  text-decoration: none;
 }
 
 .navbar span {
@@ -47,5 +63,5 @@
   cursor: pointer;
   background-color: rgb(153, 150, 150);
   color: #a8ff78;
-  transition: all 0.4s ease-in;
+  transition: all 0.3s ease-in;
 }

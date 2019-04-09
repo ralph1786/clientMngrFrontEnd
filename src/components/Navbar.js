@@ -5,16 +5,15 @@ import LogOut from "./LogOut";
 import "./Navbar.css";
 
 const Navbar = props => {
-  // console.log(props);
   return (
     <div className="navbar">
       <Link to="/">
-        <img
+        {/* <img
           src="https://i.pinimg.com/originals/17/5d/67/175d6717fa33b624afc4664d76376370.jpg"
           alt="logo"
-        />
+        /> */}
+        <h2>daycareMngr</h2>
       </Link>
-      {/* <span>{Object.keys(props.provider).length > 0 ? <LogOut /> : ""}</span> */}
       <span>
         {localStorage.getItem("token") &&
         localStorage.getItem("token") !== undefined ? (
@@ -23,9 +22,6 @@ const Navbar = props => {
           ""
         )}
       </span>
-      {/* <button onClick={() => localStorage.removeItem("token")}>
-        clear localStorage
-      </button> */}
     </div>
   );
 };
