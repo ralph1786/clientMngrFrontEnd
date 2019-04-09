@@ -35,8 +35,22 @@ class App extends Component {
               )
             }
           />
-          <Route path="/create" render={() => <CreateForm />} />
-          <Route path="/edit" render={() => <EditForm />} />
+          <Route
+            path="/create"
+            render={() =>
+              localStorage.getItem("token") ? (
+                <CreateForm />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
+          />
+          <Route
+            path="/edit"
+            render={() =>
+              localStorage.getItem("token") ? <EditForm /> : <Redirect to="/" />
+            }
+          />
           <Route path="/edit_parent" render={() => <EditForm />} />
           <Route
             path="/dashboard"
@@ -70,7 +84,16 @@ class App extends Component {
               )
             }
           />
-          <Route path="/payment_modal" render={() => <PaymentModal />} />
+          <Route
+            path="/payment_modal"
+            render={() =>
+              localStorage.getItem("token") ? (
+                <PaymentModal />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
+          />
           <Route path="/" component={Home} />
         </Switch>
         <ToastContainer autoClose={3000} />
@@ -85,15 +108,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    // setProvider: providerObj => dispatch(setProvider(providerObj))
-  };
-};
-
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(App)
-);
+export default withRouter(connect(mapStateToProps)(App));
