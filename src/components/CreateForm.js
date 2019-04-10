@@ -16,7 +16,7 @@ class CreateForm extends Component {
     allergies: "",
     balance: "",
     provider_id: 0,
-    parent_id: 0,
+    parent_id: 1,
     forms: null
   };
 
@@ -76,17 +76,16 @@ class CreateForm extends Component {
     })
       .then(res => res.json())
       .then(res => {
-        console.log(res);
+        // console.log(res);
         toast.success("Successfully created!", {
           position: toast.POSITION.BOTTOM_CENTER
         });
+        this.props.history.push("/dashboard");
       })
       .catch(err => console.log(err));
   };
 
   render() {
-    // console.log(this.props.provider.provider);
-    console.log(this.state);
     return (
       <div>
         <Link to="/dashboard">
