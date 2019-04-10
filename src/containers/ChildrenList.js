@@ -48,7 +48,7 @@ class ChildrenList extends Component {
 
 const mapStateToProps = state => {
   return {
-    children: state.children
+    children: state.children.children
   };
 };
 
