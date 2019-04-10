@@ -40,8 +40,7 @@ class PaymentModal extends Component {
     e.preventDefault();
     let currentBalance = this.props.selectedChild.balance;
     let payAmount = this.state.amount;
-    let newBalance = currentBalance - payAmount;
-    // console.log(newBalance);
+    let newBalance = Math.round(currentBalance - payAmount);
     fetch(
       `http://localhost:80/api/v1/children/${this.props.selectedChild.id}`,
       {
@@ -66,6 +65,7 @@ class PaymentModal extends Component {
       .catch(err => console.log(err));
   };
 
+  //Used to make modal accessible
   componentWillMount() {
     Modal.setAppElement("body");
   }
