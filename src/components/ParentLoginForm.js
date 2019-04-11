@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./ParentLoginForm.scss";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { loginParent } from "../actions/authActions";
 
 class LoginForm extends Component {
@@ -49,6 +49,7 @@ class LoginForm extends Component {
           <br />
           <button>Log In</button>
         </form>
+        <Link to="/parent_sign">Register</Link>
       </div>
     );
   }
