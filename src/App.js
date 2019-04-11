@@ -9,8 +9,7 @@ import CreateForm from "./components/CreateForm";
 import EditForm from "./components/EditForm.js";
 import Navbar from "./components/Navbar";
 import { connect } from "react-redux";
-// import { loginProvider } from "./actions/authActions";
-// import { setProvider } from "./actions/authActions";
+import ParentSignUp from "./components/ParentSignUp";
 import PaymentModal from "./components/PaymentModal";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -94,6 +93,7 @@ class App extends Component {
               )
             }
           />
+          <Route path="/parent_sign" render={() => <ParentSignUp />} />
           <Route path="/" component={Home} />
         </Switch>
         <ToastContainer autoClose={3000} />
