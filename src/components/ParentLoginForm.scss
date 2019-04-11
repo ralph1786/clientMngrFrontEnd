@@ -47,10 +47,25 @@
   margin-top: 50px;
   border-radius: 25px;
   outline: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(209, 208, 208);
+    color: white;
+  }
 }
 
-.parent-login form button:hover {
-  cursor: pointer;
-  background-color: rgb(209, 208, 208);
-  color: white;
+.parent-login a {
+  grid-column: 8/9;
+  grid-row: 7/8;
+  place-self: center;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: rgb(82, 80, 80);
+
+  &:hover {
+    color: rgb(138, 136, 136);
+    transform: scale(1.1);
+    transition: all 0.4s ease-in;
+  }
 }
