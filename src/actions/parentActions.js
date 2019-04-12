@@ -40,11 +40,13 @@ export const createParent = parentObj => {
             position: toast.POSITION.BOTTOM_CENTER
           });
         } else {
-          localStorage.setItem("token", res.jwt);
           dispatch(registerParent(res));
-          toast.success(`Welcome ${res.parent.name}`, {
-            position: toast.POSITION.BOTTOM_CENTER
-          });
+          toast.success(
+            `${res.parent.name} registration was successful, please login.`,
+            {
+              position: toast.POSITION.BOTTOM_CENTER
+            }
+          );
         }
       })
       .catch(err => console.log(err));
