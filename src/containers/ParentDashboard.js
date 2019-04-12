@@ -32,11 +32,20 @@ class ParentDashboard extends Component {
 
   renderChildren = () => {
     // console.log(this.props.parent);
-    if (this.props.parent.children !== undefined) {
+    if (
+      this.props.parent.children !== undefined &&
+      this.props.parent.children.length > 0
+    ) {
       let myChildren = this.props.parent.children.map(child => (
         <ChildCard key={child.id} child={child} />
       ));
       return myChildren;
+    } else {
+      return (
+        <h2 style={{ position: "absolute", top: "40%", left: "34%" }}>
+          No children to display at this time, comeback later.{" "}
+        </h2>
+      );
     }
   };
 
