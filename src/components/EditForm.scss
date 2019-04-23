@@ -54,7 +54,9 @@
 
 .edit-form form input[type="submit"]:hover {
   cursor: pointer;
-  background-color: rgb(209, 208, 208);
+  background-color: rgb(250, 127, 250);
+  color: white;
+  transition: all 0.4s ease-in;
 }
 
 #button-edit {

@@ -58,7 +58,9 @@
 
 .create-form form input[type="submit"]:hover {
   cursor: pointer;
-  background-color: rgb(209, 208, 208);
+  background-color: rgb(250, 127, 250);
+  transition: all 0.4s ease-in;
+  color: white;
 }
 
 #button-create {
@@ -75,4 +77,5 @@
 #button-create:hover {
   cursor: pointer;
   background-color: rgb(83, 152, 241);
+  transition: all 0.4s ease-in;
 }

@@ -61,7 +61,7 @@
 
 .navbar button:hover {
   cursor: pointer;
-  background-color: rgb(153, 150, 150);
+  background-color: rgb(250, 127, 250);
   color: #a8ff78;
   transition: all 0.3s ease-in;
 }
