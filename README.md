@@ -4,7 +4,7 @@ Application for daycare that facilitates the management of its children's inform
 
 ## Getting Started
 
-To get the application up and running you must clone this project, which is the frontend of the application you must also clone its corresponding backend that has the name of *clientMngrBackEnd*. Once you have cloned both repositories go into your backend, and in the terminal run **rails s** to start the rails server. For the frontend open it on your favorite browser by running the **npm start** command on your terminal.
+To get the application up and running you must clone this project, which is the frontend of the application you must also clone its corresponding backend that has the name of *clientMngrBackEnd*. Once you have cloned both repositories go into your backend, and in the terminal run **rails s** to start the rails server. For the frontend first install all the dependencies by running **npm install** on your terminal. Then open it on your favorite browser by running the **npm start** command on your terminal.
 
 ### Prerequisites
 
