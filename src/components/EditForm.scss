@@ -1,13 +1,18 @@
+@mixin formButton {
+  width: 50%;
+  height: 10%;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  outline: none;
+}
+
 .edit-form {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
 }
-
-// .login h1 {
-//   grid-column: 5/9;
-//   text-align: center;
-// }
 
 .edit-form form {
   -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
@@ -43,13 +48,7 @@
 }
 
 .edit-form form input[type="submit"] {
-  width: 50%;
-  height: 10%;
-  font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 25px;
-  outline: none;
+  @include formButton();
 }
 
 .edit-form form input[type="submit"]:hover {
@@ -57,6 +56,17 @@
   background-color: rgb(250, 127, 250);
   color: white;
   transition: all 0.4s ease-in;
+}
+
+.edit-form form .cancel-button {
+  @include formButton();
+
+  &:hover {
+    background-color: rgb(250, 66, 66);
+    color: white;
+    transition: all 0.4s ease-in;
+    cursor: pointer;
+  }
 }
 
 #button-edit {
