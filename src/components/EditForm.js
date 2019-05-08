@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import { updateChild } from "../actions/editActions";
 import { toast } from "react-toastify";
 import { connect } from "react-redux";
+import CancelButton from "./CancelButton";
 import "./EditForm.scss";
 
 class EditForm extends Component {
@@ -24,17 +25,13 @@ class EditForm extends Component {
 
   handleEditSubmit = e => {
     e.preventDefault();
-    // console.log(this.state);
     this.props.updateChild(this.state);
     toast.warning(`${this.state.name} was edited!`, {
       position: toast.POSITION.BOTTOM_CENTER
     });
-    // this.props.history.push("/parent_dashboard");
   };
 
   render() {
-    // console.log(this.props);
-    // console.log(this.state);
     return (
       <React.Fragment>
         {this.props.location.pathname === "/edit" ? (
@@ -115,6 +112,7 @@ class EditForm extends Component {
               type="submit"
               value="Edit Child"
             />
+            <CancelButton pathname={this.props.location.pathname} />
           </form>
         </div>
       </React.Fragment>
