@@ -6,6 +6,7 @@ import "./CreateForm.scss";
 import { toast } from "react-toastify";
 import { setProvider } from "../actions/authActions";
 import ParentSelect from "./ParentSelect";
+import CancelButton from "./CancelButton";
 
 class CreateForm extends Component {
   state = {
@@ -86,6 +87,7 @@ class CreateForm extends Component {
   };
 
   render() {
+    // console.log(this.props.history.location.pathname);
     return (
       <div>
         <Link to="/dashboard">
@@ -170,6 +172,7 @@ class CreateForm extends Component {
               type="submit"
               value="Create Child"
             />
+            <CancelButton pathname={this.props.history.location.pathname} />
           </form>
         </div>
       </div>

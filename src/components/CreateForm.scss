@@ -1,3 +1,12 @@
+@mixin buttons {
+  width: 50%;
+  height: 10%;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+}
+
 .create-form {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -48,12 +57,7 @@
 }
 
 .create-form form input[type="submit"] {
-  width: 50%;
-  height: 10%;
-  font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 25px;
+  @include buttons();
 }
 
 .create-form form input[type="submit"]:hover {
@@ -61,6 +65,16 @@
   background-color: rgb(250, 127, 250);
   transition: all 0.4s ease-in;
   color: white;
+}
+
+.create-form form .cancel-button {
+  @include buttons();
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(250, 66, 66);
+    transition: all 0.4s ease-in;
+    color: white;
+  }
 }
 
 #button-create {
