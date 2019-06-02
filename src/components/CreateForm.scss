@@ -1,3 +1,5 @@
+@import "../utilities/variables";
+
 @mixin buttons {
   width: 50%;
   height: 10%;
@@ -7,73 +9,70 @@
   border-radius: 25px;
 }
 
+$secondary-color: white;
+
 .create-form {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
-}
 
-.create-form form {
-  -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
-  -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
-  box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
-  background-color: rgb(32, 221, 158);
-  grid-column: 5/9;
-  grid-row: 1/5;
-  text-align: center;
-  font-size: 1.8em;
-  margin: 10px;
-  padding: 10px;
-}
+  form {
+    -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+    -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+    box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+    background-color: $form-background-color;
+    grid-column: 5/9;
+    grid-row: 1/5;
+    text-align: center;
+    font-size: 1.8em;
+    margin: 10px;
+    padding: 10px;
 
-.create-form form label,
-.create-form form input {
-  margin-top: 5px;
-  padding: 5px;
-  height: 15px;
-}
+    label,
+    input {
+      margin-top: 5px;
+      padding: 5px;
+      height: 15px;
+    }
 
-.create-form form {
-  label:last-of-type {
-    margin-right: 40px;
-  }
-  select {
-    margin-left: 10px;
-    width: 45%;
-  }
-}
-.create-form form input[type="text"],
-.create-form form input[type="number"] {
-  //   margin-left: 5px;
-  width: 50%;
-  font-size: 0.8em;
-  outline: none;
-  float: right;
-  margin-right: 20px;
-}
+    label:last-of-type {
+      margin-right: 40px;
+    }
+    select {
+      margin-left: 10px;
+      width: 45%;
+    }
 
-.create-form form label {
-  color: rgb(80, 78, 78);
-}
+    input[type="text"],
+    input[type="number"] {
+      width: 50%;
+      font-size: 0.8em;
+      outline: none;
+      float: right;
+      margin-right: 20px;
+    }
+    label {
+      color: $label-color;
+    }
+    input[type="submit"] {
+      @include buttons();
 
-.create-form form input[type="submit"] {
-  @include buttons();
-}
-
-.create-form form input[type="submit"]:hover {
-  cursor: pointer;
-  background-color: rgb(250, 127, 250);
-  transition: all 0.4s ease-in;
-  color: white;
-}
-
-.create-form form .cancel-button {
-  @include buttons();
-  &:hover {
-    cursor: pointer;
-    background-color: rgb(250, 66, 66);
-    transition: all 0.4s ease-in;
-    color: white;
+      &:hover {
+        cursor: pointer;
+        background-color: $button-color-hover;
+        transition: all 0.4s ease-in;
+        color: $secondary-color;
+      }
+    }
+    .cancel-button {
+      @include buttons();
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(250, 66, 66);
+        transition: all 0.4s ease-in;
+        color: $secondary-color;
+      }
+    }
   }
 }
 
@@ -84,12 +83,62 @@
   border-radius: 25px;
   font-size: 1.04em;
   background-color: rgb(41, 125, 237);
-  color: white;
+  color: $secondary-color;
   outline: none;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(83, 152, 241);
+    transition: all 0.4s ease-in;
+  }
 }
 
-#button-create:hover {
-  cursor: pointer;
-  background-color: rgb(83, 152, 241);
-  transition: all 0.4s ease-in;
+@media (max-width: 1024px) {
+  .create-form {
+    form {
+      grid-column: 4/10;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .create-form {
+    form {
+      grid-column: 3/11;
+      font-size: 1em;
+
+      input {
+        height: 8px;
+        margin-top: 3px;
+      }
+
+      input[type="submit"] {
+        font-size: 12px;
+      }
+
+      .cancel-button {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .create-form {
+    form {
+      grid-column: 2/12;
+      font-size: 0.8em;
+
+      input {
+        height: 6px;
+        margin-top: 5px;
+      }
+      input[type="submit"] {
+        font-size: 10px;
+      }
+
+      .cancel-button {
+        font-size: 10px;
+      }
+    }
+  }
 }

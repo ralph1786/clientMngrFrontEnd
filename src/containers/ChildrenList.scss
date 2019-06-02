@@ -1,8 +1,8 @@
 .children-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 400px));
   grid-template-rows: repeat(3, 1fr);
-  margin-left: 50px;
+  margin-left: 12%;
 }
 
 .search-bar input {
@@ -14,10 +14,35 @@
   margin-top: 4%;
   outline: none;
   text-align: center;
+
+  &:focus {
+    -webkit-box-shadow: 6px 6px 24px 1px rgb(47, 206, 140);
+    -moz-box-shadow: 6px 6px 24px 1px rgb(47, 206, 140);
+    box-shadow: 6px 6px 24px 1px rgb(47, 206, 140);
+  }
 }
 
-.search-bar input:focus {
-  -webkit-box-shadow: 6px 6px 24px 1px rgb(47, 206, 140);
-  -moz-box-shadow: 6px 6px 24px 1px rgb(47, 206, 140);
-  box-shadow: 6px 6px 24px 1px rgb(47, 206, 140);
+@media (max-width: 414px) {
+  .children-list {
+    margin-left: 3%;
+  }
+
+  .search-bar input {
+    width: 50%;
+    height: 25px;
+    margin-left: 25%;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 375px) {
+  .children-list {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-bar input {
+    margin-left: 30%;
+  }
 }

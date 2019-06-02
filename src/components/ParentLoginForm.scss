@@ -1,72 +1,139 @@
+@import "../utilities/variables";
+
 .parent-login {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
-}
 
-.parent-login h1 {
-  grid-column: 5/9;
-  text-align: center;
-  grid-row: 3/4;
-}
+  h1 {
+    grid-column: 5/9;
+    text-align: center;
+    grid-row: 3/4;
+  }
 
-.parent-login form {
-  -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
-  -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
-  box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
-  background-color: rgb(137, 253, 214);
-  grid-column: 5/9;
-  grid-row: 4/8;
-  text-align: center;
-  font-size: 2em;
-  margin: 10px;
-}
+  form {
+    -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+    -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+    box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+    background-color: $form-background-color;
+    grid-column: 5/9;
+    grid-row: 4/8;
+    text-align: center;
+    font-size: 2em;
+    margin: 10px;
 
-.parent-login form label,
-.parent-login form input {
-  margin-top: 50px;
-  padding: 10px;
-  height: 18px;
-}
+    label,
+    input {
+      margin-top: 50px;
+      padding: 10px;
+      height: 18px;
+    }
 
-.parent-login form input {
-  margin-left: 5px;
-  width: 50%;
-  font-size: 0.8em;
-  outline: none;
-}
+    input {
+      margin-left: 5px;
+      width: 50%;
+      font-size: 0.8em;
+      outline: none;
+    }
 
-.parent-login form label {
-  color: rgb(80, 78, 78);
-}
+    label {
+      color: $label-color;
+    }
 
-.parent-login form button {
-  width: 50%;
-  height: 10%;
-  font-size: 20px;
-  margin-top: 50px;
-  border-radius: 25px;
-  outline: none;
+    button {
+      width: 50%;
+      height: 10%;
+      font-size: 20px;
+      margin-top: 50px;
+      border-radius: 25px;
+      outline: none;
 
-  &:hover {
-    cursor: pointer;
-    background-color: rgb(250, 127, 250);
-    color: white;
-    transition: all 0.4s ease-in;
+      &:hover {
+        cursor: pointer;
+        background-color: $button-color-hover;
+        color: white;
+        transition: all 0.4s ease-in;
+      }
+    }
+  }
+  a {
+    grid-column: 8/9;
+    grid-row: 7/8;
+    place-self: center;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: $label-color;
+
+    &:hover {
+      color: $button-color-hover;
+      transform: scale(1.1);
+      transition: all 0.4s ease-in;
+    }
   }
 }
 
-.parent-login a {
-  grid-column: 8/9;
-  grid-row: 7/8;
-  place-self: center;
-  font-size: 1.2em;
-  text-decoration: none;
-  color: rgb(82, 80, 80);
+@media (max-width: 1024px) {
+  .parent-login {
+    form {
+      grid-column: 4/10;
 
-  &:hover {
-    color: rgb(250, 127, 250);
-    transform: scale(1.1);
-    transition: all 0.4s ease-in;
+      input {
+        height: 12px;
+      }
+    }
+    a {
+      grid-column: 9/10;
+      margin-right: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .parent-login {
+    form {
+      font-size: 1.2em;
+    }
+    a {
+      font-size: 0.9em;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .parent-login {
+    form {
+      grid-column: 3/11;
+      grid-row: 3/7;
+
+      label,
+      input {
+        margin-top: 20px;
+        height: 10px;
+        padding: 5px;
+      }
+
+      button {
+        font-size: 12px;
+      }
+    }
+
+    a {
+      grid-column: 10/11;
+      grid-row: 6/7;
+      font-size: 0.8em;
+    }
+    h1 {
+      grid-row: 2/3;
+      font-size: 20px;
+      grid-column: 3/11;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .parent-login {
+    form {
+      font-size: 1em;
+    }
   }
 }

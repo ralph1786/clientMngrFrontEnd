@@ -1,67 +1,69 @@
+@import "../utilities/variables";
+
 .parent-sign {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-}
 
-.parent-sign span {
-  grid-column: 3/4;
-  grid-row: 1/2;
-  justify-self: end;
-  font-size: 1.2em;
-  color: rgb(116, 115, 115);
+  span {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-self: end;
+    font-size: 1.2em;
+    color: rgb(116, 115, 115);
 
-  &:hover {
-    cursor: pointer;
-    color: rgb(65, 63, 63);
-    transform: scale(1.1);
-    transition: all 0.4s ease-in;
+    &:hover {
+      cursor: pointer;
+      color: rgb(65, 63, 63);
+      transform: scale(1.1);
+      transition: all 0.4s ease-in;
+    }
   }
-}
 
-.parent-sign h4 {
-  grid-column: 1/2;
-  text-align: center;
-  grid-row: 1/2;
-  margin-top: -3%;
-}
+  h4 {
+    grid-column: 1/2;
+    text-align: center;
+    grid-row: 1/2;
+    margin-top: -3%;
+  }
 
-.parent-sign form {
-  grid-column: 1/4;
-  grid-row: 1/4;
-  text-align: center;
-  font-size: 1.6em;
-}
+  form {
+    grid-column: 1/4;
+    grid-row: 1/4;
+    text-align: center;
+    font-size: 1.6em;
 
-.parent-sign form label,
-.parent-sign form input {
-  margin: 2.5%;
-  padding: 10px;
-  height: 10px;
-}
+    label,
+    input {
+      margin: 2.5%;
+      padding: 10px;
+      height: 10px;
+    }
 
-.parent-sign form input {
-  margin-left: 5px;
-  width: 50%;
-  font-size: 0.8em;
-  outline: none;
-}
+    input {
+      margin-left: 5px;
+      width: 50%;
+      font-size: 0.8em;
+      outline: none;
+    }
 
-.parent-sign form label {
-  color: rgb(80, 78, 78);
-}
+    label {
+      color: $label-color;
+    }
 
-.parent-sign form button {
-  width: 50%;
-  height: 10%;
-  font-size: 20px;
-  margin-top: 30px;
-  border-radius: 25px;
-  outline: none;
+    button {
+      width: 50%;
+      height: 10%;
+      font-size: 20px;
+      margin-top: 30px;
+      border-radius: 25px;
+      outline: none;
 
-  &:hover {
-    cursor: pointer;
-    background-color: rgb(209, 208, 208);
-    color: white;
+      &:hover {
+        cursor: pointer;
+        background-color: $button-color-hover;
+        color: white;
+      }
+    }
   }
 }

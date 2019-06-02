@@ -1,3 +1,5 @@
+@import "../utilities/variables";
+
 @mixin formButton {
   width: 50%;
   height: 10%;
@@ -12,60 +14,59 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
-}
 
-.edit-form form {
-  -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
-  -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
-  box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
-  background-color: rgb(32, 221, 158);
-  grid-column: 5/9;
-  grid-row: 2/6;
-  text-align: center;
-  font-size: 1.8em;
-  margin: 10px;
-  padding: 10px;
-}
+  form {
+    -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+    -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+    box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+    background-color: $form-background-color;
+    grid-column: 5/9;
+    grid-row: 2/6;
+    text-align: center;
+    font-size: 1.8em;
+    margin: 10px;
+    padding: 10px;
 
-.edit-form form label,
-.edit-form form input {
-  margin-top: 5px;
-  padding: 5px;
-  height: 15px;
-}
+    label,
+    input {
+      margin-top: 5px;
+      padding: 5px;
+      height: 15px;
+    }
 
-.edit-form form input[type="text"] {
-  //   margin-left: 5px;
-  width: 50%;
-  font-size: 0.8em;
-  outline: none;
-  float: right;
-  margin-right: 20px;
-}
+    input[type="text"] {
+      width: 50%;
+      font-size: 0.8em;
+      outline: none;
+      float: right;
+      margin-right: 20px;
+    }
 
-.edit-form form label {
-  color: rgb(80, 78, 78);
-}
+    label {
+      color: $label-color;
+    }
 
-.edit-form form input[type="submit"] {
-  @include formButton();
-}
+    input[type="submit"] {
+      @include formButton();
 
-.edit-form form input[type="submit"]:hover {
-  cursor: pointer;
-  background-color: rgb(250, 127, 250);
-  color: white;
-  transition: all 0.4s ease-in;
-}
+      &:hover {
+        cursor: pointer;
+        background-color: $button-color-hover;
+        color: white;
+        transition: all 0.4s ease-in;
+      }
+    }
 
-.edit-form form .cancel-button {
-  @include formButton();
+    .cancel-button {
+      @include formButton();
 
-  &:hover {
-    background-color: rgb(250, 66, 66);
-    color: white;
-    transition: all 0.4s ease-in;
-    cursor: pointer;
+      &:hover {
+        background-color: rgb(250, 66, 66);
+        color: white;
+        transition: all 0.4s ease-in;
+        cursor: pointer;
+      }
+    }
   }
 }
 
@@ -78,9 +79,63 @@
   background-color: rgb(41, 125, 237);
   color: white;
   outline: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(83, 152, 241);
+  }
 }
 
-#button-edit:hover {
-  cursor: pointer;
-  background-color: rgb(83, 152, 241);
+@media (max-width: 1024px) {
+  .edit-form {
+    form {
+      grid-column: 4/10;
+      font-size: 1.2em;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .edit-form {
+    form {
+      grid-column: 3/11;
+      font-size: 1em;
+      input {
+        height: 6px;
+      }
+      input[type="submit"] {
+        font-size: 12px;
+      }
+
+      .cancel-button {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .edit-form {
+    form {
+      grid-column: 2/12;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .edit-form {
+    form {
+      font-size: 0.8em;
+      input {
+        height: 4.5px;
+      }
+      input[type="submit"] {
+        font-size: 10px;
+      }
+
+      .cancel-button {
+        font-size: 10px;
+      }
+    }
+  }
 }

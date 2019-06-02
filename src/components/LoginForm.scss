@@ -1,57 +1,117 @@
+@import "../utilities/variables";
+
 .login {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
+
+  h1 {
+    grid-column: 5/9;
+    text-align: center;
+    grid-row: 2/3;
+  }
+
+  form {
+    -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+    -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+    box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
+    background-color: $form-background-color;
+    grid-column: 5/9;
+    grid-row: 4/8;
+    text-align: center;
+    font-size: 1.8em;
+    margin: 10px;
+
+    label,
+    input {
+      margin-top: 50px;
+      padding: 10px;
+      height: 18px;
+    }
+
+    input {
+      margin-left: 5px;
+      width: 50%;
+      font-size: 0.8em;
+      outline: none;
+    }
+
+    label {
+      color: $label-color;
+    }
+
+    button {
+      width: 50%;
+      height: 10%;
+      font-size: 20px;
+      margin-top: 50px;
+      border-radius: 25px;
+      outline: none;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $button-color-hover;
+        color: white;
+        transition: all 0.4s ease-in;
+      }
+    }
+  }
 }
 
-.login h1 {
-  grid-column: 5/9;
-  text-align: center;
-  grid-row: 3/4;
+@media (max-width: 1024px) {
+  .login form {
+    font-size: 1.2em;
+
+    input {
+      height: 10px;
+    }
+  }
 }
 
-.login form {
-  -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
-  -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
-  box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
-  background-color: rgb(32, 221, 158);
-  grid-column: 5/9;
-  grid-row: 4/8;
-  text-align: center;
-  font-size: 2em;
-  margin: 10px;
+@media (max-width: 768px) {
+  .login form {
+    font-size: 1.2em;
+    grid-row: 3/5;
+    padding: 20px;
+    grid-column: 4/10;
+    input {
+      height: 6px;
+      margin-top: 20px;
+    }
+    label {
+      font-size: 1.1em;
+    }
+    button {
+      margin-top: 20px;
+      font-size: 12px;
+    }
+  }
+  .login h1 {
+    font-size: 30px;
+  }
 }
 
-.login form label,
-.login form input {
-  margin-top: 50px;
-  padding: 10px;
-  height: 18px;
-}
-
-.login form input {
-  margin-left: 5px;
-  width: 50%;
-  font-size: 0.8em;
-  outline: none;
-}
-
-.login form label {
-  color: rgb(80, 78, 78);
-}
-
-.login form button {
-  width: 50%;
-  height: 10%;
-  font-size: 20px;
-  margin-top: 50px;
-  border-radius: 25px;
-  outline: none;
-}
-
-.login form button:hover {
-  cursor: pointer;
-  background-color: rgb(250, 127, 250);
-  color: white;
-  transition: all 0.4s ease-in;
+@media (max-width: 414px) {
+  .login form {
+    font-size: 1em;
+    grid-row: 3/5;
+    grid-column: 3/11;
+    padding: 15px;
+    input {
+      height: 6px;
+      margin-top: 20px;
+      padding: 5px;
+    }
+    label {
+      font-size: 1em;
+    }
+    button {
+      margin-top: 15px;
+      font-size: 10px;
+    }
+  }
+  .login h1 {
+    font-size: 20px;
+    grid-column: 4/10;
+  }
 }

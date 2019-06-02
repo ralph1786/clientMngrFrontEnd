@@ -1,0 +1,60 @@
+@import "../utilities/variables";
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  opacity: 0.9;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  background: #a8ff78;
+  background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);
+  background: linear-gradient(to right, #78ffd6, #a8ff78);
+
+  a {
+    text-decoration: none;
+  }
+
+  h2 {
+    color: rgb(231, 56, 231);
+    margin-left: 30px;
+    text-decoration: none;
+    &:hover {
+      color: $button-color-hover;
+      transform: scale(1.05);
+      transition: all 0.4s ease-in;
+    }
+  }
+
+  span {
+    grid-column: 12/13;
+    height: 25px;
+    width: 100px;
+    margin: 20px;
+    border-radius: 25px;
+    outline: none;
+  }
+
+  button {
+    padding: 5px;
+    font-size: 1.1em;
+    outline: none;
+    border-radius: 15px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $button-color-hover;
+      color: #a8ff78;
+      transition: all 0.3s ease-in;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .navbar {
+    height: 50px;
+    h2 {
+      font-size: 16px;
+    }
+  }
+}
