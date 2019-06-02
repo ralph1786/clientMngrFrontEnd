@@ -4,8 +4,8 @@
   box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
   margin: 10px;
   padding: 5px;
-  width: 400px;
-  height: 550px;
+  width: 350px;
+  height: 500px;
   overflow: hidden;
   text-align: center;
 
@@ -13,39 +13,39 @@
     background-color: rgba(153, 252, 215, 0.35);
     transition: all 0.3s ease-in;
   }
-}
 
-.child-card img {
-  width: 300px;
-  height: 300px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
+  img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
 
-.child-card button:nth-child(odd) {
-  margin: 10px;
-  padding: 2px 20px;
-  border-radius: 25px;
-}
+  button:nth-child(odd) {
+    margin: 10px;
+    padding: 2px 20px;
+    border-radius: 25px;
 
-.child-card button:nth-child(odd):hover {
-  background-color: orange;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease-in;
-}
+    &:hover {
+      background-color: orange;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease-in;
+    }
+  }
 
-.child-card button:nth-child(even) {
-  margin: 10px;
-  padding: 2px 20px;
-  border-radius: 25px;
-}
+  button:nth-child(even) {
+    margin: 10px;
+    padding: 2px 20px;
+    border-radius: 25px;
 
-.child-card button:nth-child(even):hover {
-  background-color: rgb(248, 44, 44);
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease-in;
+    &:hover {
+      background-color: rgb(248, 44, 44);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease-in;
+    }
+  }
 }
 
 .child-card #make_payment:hover {
