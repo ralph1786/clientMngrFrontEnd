@@ -13,17 +13,7 @@ const renderButton = props => {
 };
 
 const LogOut = props => {
-  // console.log(props.parent.parent);
-  return (
-    <div>
-      {/* {props.parent.provider ? (
-        <button onClick={() => props.removeProvider()}>Logout</button>
-      ) : (
-        <button onClick={() => props.removeParent()}>Logout</button>
-      )} */}
-      {renderButton(props)}
-    </div>
-  );
+  return <div>{renderButton(props)}</div>;
 };
 
 const mapStateToProps = state => {
