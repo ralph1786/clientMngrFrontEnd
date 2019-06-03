@@ -4,6 +4,7 @@ import { withRouter, Redirect } from "react-router-dom";
 import { addParent } from "../actions/authActions";
 import ChildCard from "../components/ChildCard";
 import "./ParentDashboard.scss";
+import Message from "../components/Message";
 
 class ParentDashboard extends Component {
   componentDidMount() {
@@ -56,7 +57,10 @@ class ParentDashboard extends Component {
         <br />
         <br />
         <div>
-          <h1>Welcome, {this.props.parent.name}</h1>
+          <h1>
+            {<Message />}
+            {this.props.parent.name}
+          </h1>
         </div>
         <br />
         <br />

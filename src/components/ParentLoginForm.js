@@ -3,6 +3,7 @@ import "./ParentLoginForm.scss";
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 import { loginParent } from "../actions/authActions";
+import Message from "./Message";
 
 class LoginForm extends Component {
   state = {
@@ -26,10 +27,9 @@ class LoginForm extends Component {
   };
 
   render() {
-    // console.log(this.props.parent);
     return (
       <div className="parent-login animated flipInY">
-        <h1>Welcome Parent</h1>
+        <h1>{<Message />} Parent</h1>
         <form onSubmit={this.handleSubmit}>
           <label>Username</label>
           <input
