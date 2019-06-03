@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { updateChild } from "../actions/editActions";
 import { toast } from "react-toastify";
 import { connect } from "react-redux";
@@ -34,18 +34,7 @@ class EditForm extends Component {
   render() {
     return (
       <React.Fragment>
-        {this.props.location.pathname === "/edit" ? (
-          <Link to="/dashboard">
-            <button id="button-edit">Dashboard</button>
-          </Link>
-        ) : (
-          <Link to="/parent_dashboard">
-            <button id="button-edit">Dashboard</button>
-          </Link>
-        )}
         <div className="edit-form animated flipInY">
-          <br />
-          <br />
           <form onSubmit={this.handleEditSubmit}>
             <label>Name</label>
             <input
