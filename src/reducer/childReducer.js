@@ -16,6 +16,7 @@ const childReducer = (state = initialState, action) => {
       };
     case "REMOVE_CHILD":
       return {
+        ...state,
         children: state.children.filter(child => child.id !== action.payload)
       };
     default:

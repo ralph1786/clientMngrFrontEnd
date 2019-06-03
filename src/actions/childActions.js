@@ -24,44 +24,21 @@ export const allChildren = () => {
   };
 };
 
-// export const newChild = childInfo => {
-//   console.log(childInfo);
-//   return dispatch => {
-//     return fetch("http://localhost:80/api/v1/children", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         Accept: "application/json"
-//       },
-//       body: JSON.stringify(childInfo)
-//     })
-//       .then(res => res.json())
-//       .then(res => {
-//         console.log(res);
-//         dispatch(createChild(res));
-//       })
-//       .catch(err => console.log(err));
-//   };
-// };
-
 export const deleteChild = id => {
   return dispatch => {
-    return (
-      fetch(`http://localhost:80/api/v1/children/${id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        }
+    dispatch(removeChild(id));
+    return fetch(`http://localhost:80/api/v1/children/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
+    })
+      .then(() => {
+        toast.error("Child Deleted!", {
+          position: toast.POSITION.BOTTOM_CENTER
+        });
       })
-        // .then(res => res.json())
-        .then(res => {
-          dispatch(removeChild(res.id));
-          toast.error("Child Deleted!", {
-            position: toast.POSITION.BOTTOM_CENTER
-          });
-        })
-        .catch(err => console.log(err))
-    );
+      .catch(err => console.log(err));
   };
 };
