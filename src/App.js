@@ -18,7 +18,6 @@ import "./App.css";
 
 class App extends Component {
   render() {
-    // console.log(this.props.history);
     return (
       <div>
         <Navbar />

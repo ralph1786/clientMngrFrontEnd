@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter, Redirect } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import { createChild } from "../actions/childActions";
 import { connect } from "react-redux";
 import "./CreateForm.scss";
@@ -87,94 +87,86 @@ class CreateForm extends Component {
   };
 
   render() {
-    // console.log(this.props.history.location.pathname);
     return (
-      <div>
-        <Link to="/dashboard">
-          <button id="button-create">Dashboard</button>
-        </Link>
-        <br />
-        <br />
-        <div className="create-form animated flipInY">
-          <form onSubmit={this.handleCreateSubmit}>
-            <label>Name</label>
-            <input
-              name="name"
-              type="text"
-              value={this.state.name}
-              onChange={this.handleChange}
-            />
-            <br />
-            <br />
-            <label>Image Url</label>
-            <input
-              name="image"
-              type="text"
-              value={this.state.image}
-              onChange={this.handleChange}
-            />
-            <br />
-            <br />
-            <label>Age</label>
-            <input
-              name="age"
-              type="text"
-              value={this.state.age}
-              onChange={this.handleChange}
-            />
-            <br />
-            <br />
-            <label>Address</label>
-            <input
-              name="address"
-              type="text"
-              value={this.state.address}
-              onChange={this.handleChange}
-            />
-            <br />
-            <br />
-            <label>Allergies</label>
-            <input
-              name="allergies"
-              type="text"
-              value={this.state.allergies}
-              onChange={this.handleChange}
-            />
-            <br />
-            <br />
-            <label>Balance</label>
-            <input
-              name="balance"
-              type="text"
-              value={this.state.balance}
-              onChange={this.handleChange}
-            />
-            <br />
-            <br />
-            <label>Parent</label>
-            <ParentSelect
-              name="parent_id"
-              value={this.state.parent_id}
-              handleSelectChange={this.handleChange}
-            />
-            <br />
-            <br />
-            <input
-              name="forms"
-              type="file"
-              multiple
-              onChange={this.handleFilesChange}
-            />
-            <br />
-            <br />
-            <input
-              style={{ outline: "none" }}
-              type="submit"
-              value="Create Child"
-            />
-            <CancelButton pathname={this.props.history.location.pathname} />
-          </form>
-        </div>
+      <div className="create-form animated flipInY">
+        <form onSubmit={this.handleCreateSubmit}>
+          <label>Name</label>
+          <input
+            name="name"
+            type="text"
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+          <br />
+          <br />
+          <label>Image Url</label>
+          <input
+            name="image"
+            type="text"
+            value={this.state.image}
+            onChange={this.handleChange}
+          />
+          <br />
+          <br />
+          <label>Age</label>
+          <input
+            name="age"
+            type="text"
+            value={this.state.age}
+            onChange={this.handleChange}
+          />
+          <br />
+          <br />
+          <label>Address</label>
+          <input
+            name="address"
+            type="text"
+            value={this.state.address}
+            onChange={this.handleChange}
+          />
+          <br />
+          <br />
+          <label>Allergies</label>
+          <input
+            name="allergies"
+            type="text"
+            value={this.state.allergies}
+            onChange={this.handleChange}
+          />
+          <br />
+          <br />
+          <label>Balance</label>
+          <input
+            name="balance"
+            type="text"
+            value={this.state.balance}
+            onChange={this.handleChange}
+          />
+          <br />
+          <br />
+          <label>Parent</label>
+          <ParentSelect
+            name="parent_id"
+            value={this.state.parent_id}
+            handleSelectChange={this.handleChange}
+          />
+          <br />
+          <br />
+          <input
+            name="forms"
+            type="file"
+            multiple
+            onChange={this.handleFilesChange}
+          />
+          <br />
+          <br />
+          <input
+            style={{ outline: "none" }}
+            type="submit"
+            value="Create Child"
+          />
+          <CancelButton pathname={this.props.history.location.pathname} />
+        </form>
       </div>
     );
   }
