@@ -1,5 +1,7 @@
 @import "../utilities/variables";
 
+$navbar-button-color: rgb(231, 56, 231);
+
 .navbar {
   position: fixed;
   width: 100%;
@@ -16,7 +18,7 @@
   }
 
   h2 {
-    color: rgb(231, 56, 231);
+    color: $navbar-button-color;
     margin-left: 30px;
     text-decoration: none;
     &:hover {
@@ -31,22 +33,42 @@
     height: 25px;
     width: 100px;
     margin: 20px;
-    border-radius: 25px;
-    outline: none;
   }
 
   button {
     padding: 5px;
     font-size: 1.1em;
-    outline: none;
-    border-radius: 15px;
+    background-color: transparent;
+    color: $navbar-button-color;
+    border: none;
 
     &:hover {
       cursor: pointer;
-      background-color: $button-color-hover;
-      color: #a8ff78;
+      color: $button-color-hover;
+      transform: scale(1.1);
       transition: all 0.3s ease-in;
     }
+  }
+
+  .create-button {
+    grid-column: 11/12;
+    @extend span;
+    button {
+      @extend button;
+    }
+  }
+
+  .dashboard-button {
+    @extend .create-button;
+  }
+
+  .parent-dashboard {
+    @extend .create-button;
+  }
+
+  .dashboard-button-edit-form {
+    grid-column: 10/11;
+    @extend .create-button;
   }
 }
 
@@ -55,6 +77,27 @@
     height: 50px;
     h2 {
       font-size: 16px;
+    }
+    button {
+      font-size: 12px;
+      float: right;
+    }
+    .create-button {
+      font-size: 12px;
+    }
+    .dashboard-button {
+      font-size: 12px;
+    }
+    .dashboard-button-edit-form {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .navbar {
+    button {
+      margin-right: 10%;
     }
   }
 }
