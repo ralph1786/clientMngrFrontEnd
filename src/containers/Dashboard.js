@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ChildrenList from "./ChildrenList";
 import "./Dashboard.scss";
-import { Link, withRouter, Redirect } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { setProvider } from "../actions/authActions";
 
@@ -31,12 +31,8 @@ class Dashboard extends Component {
   }
 
   render() {
-    // console.log(this.props.provider);
     return (
       <div className="dashboard">
-        <Link to="/create">
-          <button>New Child</button>
-        </Link>
         <ChildrenList />
       </div>
     );
