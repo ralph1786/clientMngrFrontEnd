@@ -13,6 +13,7 @@ import ParentSignUp from "./components/ParentSignUp";
 import PaymentModal from "./components/PaymentModal";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SideDrawer from "./components/SideDrawer";
 
 import "./App.css";
 
@@ -21,6 +22,7 @@ class App extends Component {
     return (
       <div>
         <Navbar />
+        <SideDrawer />
         <Switch>
           <Route
             path="/login"
