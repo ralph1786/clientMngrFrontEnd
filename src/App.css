@@ -7,3 +7,14 @@ button {
 body {
   font-family: "Ubuntu", cursive;
 }
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(46, 44, 44, 0.7);
+  transition: background-color 0.5s ease-in-out;
+}

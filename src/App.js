@@ -14,6 +14,7 @@ import PaymentModal from "./components/PaymentModal";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SideDrawer from "./components/SideDrawer";
+import { closeSideDrawer } from "./actions/uiActions";
 
 import "./App.css";
 
@@ -23,6 +24,10 @@ class App extends Component {
       <div>
         <Navbar />
         <SideDrawer />
+        <div
+          className={this.props.isDrawerOpen ? "overlay" : ""}
+          onClick={this.props.closeSideDrawer}
+        />
         <Switch>
           <Route
             path="/login"
@@ -51,7 +56,12 @@ class App extends Component {
               localStorage.getItem("token") ? <EditForm /> : <Redirect to="/" />
             }
           />
-          <Route path="/edit_parent" render={() => <EditForm />} />
+          <Route
+            path="/edit_parent"
+            render={() =>
+              localStorage.getItem("token") ? <EditForm /> : <Redirect to="/" />
+            }
+          />
           <Route
             path="/dashboard"
             render={() =>
@@ -80,7 +90,6 @@ class App extends Component {
                 <ParentDashboard />
               ) : (
                 <Redirect to="/" />
-                // this.props.history.push("/parent_login")
               )
             }
           />
@@ -105,8 +114,20 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    provider: state.provider
+    provider: state.provider,
+    isDrawerOpen: state.ui.isDrawerOpen
   };
 };
 
-export default withRouter(connect(mapStateToProps)(App));
+const mapDispatchToProps = dispatch => {
+  return {
+    closeSideDrawer: () => dispatch(closeSideDrawer())
+  };
+};
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+);
