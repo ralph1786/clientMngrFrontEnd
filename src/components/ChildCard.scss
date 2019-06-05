@@ -53,3 +53,15 @@
   color: white;
   transition: all 0.3s ease-in;
 }
+
+@media (max-width: 414px) {
+  .child-card {
+    width: 275px;
+    height: 400px;
+
+    img {
+      width: 160px;
+      height: 160px;
+    }
+  }
+}
