@@ -56,3 +56,46 @@
   );
   box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
 }
+
+@media (max-width: 1024px) {
+  .button {
+    a:nth-child(even) {
+      grid-column: 7/9;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .button {
+    a:nth-child(odd) {
+      grid-column: 3/5;
+    }
+  }
+  .btn-hover {
+    width: 180px;
+  }
+}
+
+@media (max-width: 414px) {
+  .btn-hover {
+    width: 100px;
+    height: 40px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 375px) {
+  .btn-hover {
+    width: 90px;
+    height: 37px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 360px) {
+  .btn-hover {
+    width: 75px;
+    height: 32px;
+    font-size: 0.8em;
+  }
+}
