@@ -11,12 +11,14 @@ import authReducer from "./reducer/authReducer";
 import childReducer from "./reducer/childReducer";
 import editReducer from "./reducer/editReducer";
 import parentReducer from "./reducer/parentReducer";
+import uiReducer from "./reducer/uiReducer";
 
 const rootReducer = combineReducers({
   provider: authReducer,
   children: childReducer,
   editChild: editReducer,
-  parents: parentReducer
+  parents: parentReducer,
+  ui: uiReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
