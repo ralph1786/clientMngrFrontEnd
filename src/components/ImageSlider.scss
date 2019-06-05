@@ -1,0 +1,99 @@
+.carousel .carousel-slider {
+  height: 700px;
+}
+
+.carousel .slide img {
+  margin-top: 4%;
+  height: 700px;
+}
+
+.carousel .thumbs {
+  margin-left: 33%;
+}
+
+@media (max-width: 1024px) {
+  .carousel {
+    .thumbs {
+      margin-left: 24%;
+    }
+    .slide {
+      img {
+        margin-top: 6%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    .carousel-slider {
+      height: 450px;
+    }
+    .slide {
+      img {
+        height: 450px;
+        margin-top: 9%;
+      }
+    }
+    .thumbs {
+      margin-left: 17%;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .carousel {
+    .carousel-slider {
+      height: 250px;
+    }
+    .slide {
+      img {
+        height: 250px;
+        margin-top: 12%;
+      }
+    }
+    .thumbs {
+      margin-left: -10px;
+      li {
+        width: 60px;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .carousel {
+    .carousel-slider {
+      height: 225px;
+    }
+    .slide {
+      img {
+        height: 225px;
+        margin-top: 13%;
+      }
+    }
+    .thumbs {
+      margin-left: -32px;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .carousel {
+    .carousel-slider {
+      height: 200px;
+    }
+    .slide {
+      img {
+        height: 200px;
+        margin-top: 14%;
+      }
+    }
+    .thumbs {
+      margin-left: -19px;
+      li {
+        width: 50px;
+      }
+    }
+  }
+}
