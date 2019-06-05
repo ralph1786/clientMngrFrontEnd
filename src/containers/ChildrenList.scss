@@ -23,10 +23,6 @@
 }
 
 @media (max-width: 414px) {
-  .children-list {
-    margin-left: 3%;
-  }
-
   .search-bar input {
     width: 50%;
     height: 20px;
@@ -38,7 +34,7 @@
 
 @media (max-width: 375px) {
   .children-list {
-    margin-left: 0;
+    margin-left: 10%;
   }
 }
 

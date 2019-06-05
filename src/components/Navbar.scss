@@ -1,7 +1,5 @@
 @import "../utilities/variables";
 
-$navbar-button-color: rgb(231, 56, 231);
-
 .navbar {
   position: fixed;
   width: 100%;
@@ -33,6 +31,10 @@ $navbar-button-color: rgb(231, 56, 231);
     height: 25px;
     width: 100px;
     margin: 20px;
+
+    .menu-icon {
+      display: none;
+    }
   }
 
   button {
@@ -81,15 +83,25 @@ $navbar-button-color: rgb(231, 56, 231);
     button {
       font-size: 12px;
       float: right;
+      display: none;
+    }
+    span {
+      .menu-icon {
+        display: inline-block;
+        margin: -10px;
+      }
     }
     .create-button {
       font-size: 12px;
+      display: none;
     }
     .dashboard-button {
       font-size: 12px;
+      display: none;
     }
     .dashboard-button-edit-form {
       font-size: 12px;
+      display: none;
     }
   }
 }

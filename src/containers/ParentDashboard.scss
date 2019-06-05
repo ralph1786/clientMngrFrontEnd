@@ -1,6 +1,6 @@
 .parent-dashboard {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 400px));
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 15px;
 }
@@ -8,4 +8,17 @@
 h1 {
   text-align: center;
   margin-top: 5%;
+}
+
+@media (max-width: 414px) {
+  h1 {
+    font-size: 1.3em;
+    margin-top: 10%;
+  }
+}
+
+@media (max-width: 320px) {
+  h1 {
+    font-size: 1.1em;
+  }
 }
