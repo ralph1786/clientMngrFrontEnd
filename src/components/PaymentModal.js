@@ -15,8 +15,6 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     border: "none",
-    height: "300px",
-    width: "550px",
     webkitboxShadow: "11px 10px 44px 4px rgba(0,0,0,0.75)",
     mozboxShadow: "11px 10px 44px 4px rgba(0,0,0,0.75)",
     boxShadow: "11px 10px 44px 4px rgba(0,0,0,0.75)",
@@ -77,14 +75,15 @@ class PaymentModal extends Component {
   };
 
   render() {
-    // console.log("child id", this.props.selectedChild.id);
-    // console.log(this.state.amount);
+    console.log(window);
     return (
       <div>
         <Modal
           isOpen={this.state.isModalOpen}
           style={customStyles}
           // onRequestClose={this.closeModal}
+          className="Modal"
+          overlayClassName="Overlay"
         >
           <span
             className="close-button"
@@ -128,7 +127,7 @@ class PaymentModal extends Component {
               maxLength="2"
               onChange={this.handleChange}
             />
-            <span>/</span>
+
             <input
               name="year"
               type="text"

@@ -62,8 +62,6 @@ class ParentDashboard extends Component {
             {this.props.parent.name}
           </h1>
         </div>
-        <br />
-        <br />
         <div className="parent-dashboard">{this.renderChildren()}</div>
       </div>
     );
