@@ -1,0 +1,42 @@
+@import "../utilities/variables";
+
+.side-drawer-closed {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  background-color: rgb(255, 254, 254);
+  overflow-x: hidden;
+  transition: width 0.3s ease-out;
+
+  .drawer_close_btn {
+    display: none;
+    float: right;
+    color: $navbar-button-color;
+  }
+  div {
+    button {
+      display: none;
+      margin-top: 60px;
+      color: $navbar-button-color;
+      font-size: 1em;
+    }
+  }
+}
+
+.side-drawer-open {
+  @extend .side-drawer-closed;
+  width: 45%;
+  transition: width 0.3s ease-in;
+
+  .drawer_close_btn {
+    display: inline;
+  }
+  div {
+    button {
+      display: inline-block;
+    }
+  }
+}
