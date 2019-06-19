@@ -1,15 +1,12 @@
 @import "../utilities/variables";
 
-.navbar {
+@mixin navbarMixin() {
   position: fixed;
   width: 100%;
   opacity: 0.9;
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  background: #a8ff78;
-  background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);
-  background: linear-gradient(to right, #78ffd6, #a8ff78);
 
   a {
     text-decoration: none;
@@ -74,40 +71,78 @@
   }
 }
 
+.navbar-scroll {
+  @include navbarMixin();
+  background: $navbar-button-color;
+  transition: background 0.8s linear;
+  h2 {
+    color: white;
+    &:hover {
+      color: lightgray;
+    }
+  }
+  button {
+    color: white;
+    &:hover {
+      color: lightgray;
+    }
+  }
+}
+
+.navbar {
+  @include navbarMixin();
+  background: #a8ff78;
+  background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);
+  background: linear-gradient(to right, #78ffd6, #a8ff78);
+}
+
+@mixin mediaQuery {
+  height: 50px;
+  h2 {
+    font-size: 16px;
+  }
+  button {
+    font-size: 12px;
+    float: right;
+    display: none;
+  }
+  span {
+    .menu-icon {
+      display: inline-block;
+      margin: -10px;
+    }
+  }
+  .create-button {
+    font-size: 12px;
+    display: none;
+  }
+  .dashboard-button {
+    font-size: 12px;
+    display: none;
+  }
+  .dashboard-button-edit-form {
+    font-size: 12px;
+    display: none;
+  }
+}
+
 @media (max-width: 414px) {
   .navbar {
-    height: 50px;
-    h2 {
-      font-size: 16px;
-    }
-    button {
-      font-size: 12px;
-      float: right;
-      display: none;
-    }
-    span {
-      .menu-icon {
-        display: inline-block;
-        margin: -10px;
-      }
-    }
-    .create-button {
-      font-size: 12px;
-      display: none;
-    }
-    .dashboard-button {
-      font-size: 12px;
-      display: none;
-    }
-    .dashboard-button-edit-form {
-      font-size: 12px;
-      display: none;
-    }
+    @include mediaQuery();
+  }
+
+  .navbar-scroll {
+    @include mediaQuery();
   }
 }
 
 @media (max-width: 375px) {
   .navbar {
+    button {
+      margin-right: 10%;
+    }
+  }
+  .navbar-scroll {
     button {
       margin-right: 10%;
     }

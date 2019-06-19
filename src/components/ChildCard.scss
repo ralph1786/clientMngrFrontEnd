@@ -1,3 +1,5 @@
+@import "../utilities/_variables";
+
 .child-card {
   -webkit-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
   -moz-box-shadow: 10px 10px 29px 1px rgba(140, 137, 140, 1);
@@ -10,7 +12,7 @@
   text-align: center;
 
   &:hover {
-    background-color: rgba(153, 252, 215, 0.35);
+    background-color: $button-color-hover-opacity;
     transition: all 0.3s ease-in;
   }
 
@@ -62,6 +64,21 @@
     img {
       width: 160px;
       height: 160px;
+    }
+
+    button:nth-child(odd) {
+      background-color: orange;
+      color: white;
+    }
+
+    button:nth-child(even) {
+      background-color: rgb(248, 44, 44);
+      color: white;
+    }
+
+    #make_payment {
+      background-color: rgb(60, 141, 247);
+      color: white;
     }
   }
 }

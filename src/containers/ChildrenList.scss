@@ -1,3 +1,5 @@
+@import "../utilities/_variables";
+
 .children-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 400px));
@@ -14,11 +16,12 @@
   margin-top: 10%;
   outline: none;
   text-align: center;
+  border: 1px solid rgb(68, 67, 67);
 
   &:focus {
-    -webkit-box-shadow: 6px 6px 24px 1px rgb(47, 206, 140);
-    -moz-box-shadow: 6px 6px 24px 1px rgb(47, 206, 140);
-    box-shadow: 6px 6px 24px 1px rgb(47, 206, 140);
+    -webkit-box-shadow: 6px 6px 24px 1px $button-color-hover-opacity;
+    -moz-box-shadow: 6px 6px 24px 1px $button-color-hover-opacity;
+    box-shadow: 6px 6px 24px 1px $button-color-hover-opacity;
   }
 }
 

@@ -5,9 +5,8 @@ import "./Navbar.scss";
 import NavbarMenu from "./NavbarMenu";
 
 const Navbar = props => {
-  console.log(props);
   return (
-    <div className="navbar">
+    <div className={props.scrolled ? "navbar-scroll" : "navbar"}>
       <Link to="/">
         <h2>daycareMngr</h2>
       </Link>
