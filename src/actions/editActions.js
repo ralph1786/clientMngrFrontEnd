@@ -13,7 +13,6 @@ export const openModal = () => ({
 });
 
 export const updateChild = childObj => {
-  console.log(childObj);
   return dispatch => {
     return fetch(`http://localhost:80/api/v1/children/${childObj.id}`, {
       method: "PATCH",

@@ -75,7 +75,6 @@ class PaymentModal extends Component {
   };
 
   render() {
-    console.log(window);
     return (
       <div>
         <Modal

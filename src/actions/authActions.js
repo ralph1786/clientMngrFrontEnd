@@ -68,7 +68,6 @@ export const loginParent = parentObj => {
     })
       .then(res => res.json())
       .then(res => {
-        // console.log(res);
         if (res.jwt === undefined) {
           localStorage.clear();
           toast.error("Wrong username or password!", {

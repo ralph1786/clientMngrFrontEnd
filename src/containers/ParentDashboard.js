@@ -20,7 +20,6 @@ class ParentDashboard extends Component {
       })
         .then(res => res.json())
         .then(res => {
-          console.log(res.parent);
           if (res.error) {
             return <Redirect to="/login" />;
           } else {

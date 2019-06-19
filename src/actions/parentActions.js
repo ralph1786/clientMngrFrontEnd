@@ -15,7 +15,6 @@ export const allParents = () => {
     return fetch("http://localhost:80/api/v1/parents")
       .then(res => res.json())
       .then(res => {
-        console.log(res);
         dispatch(loadParent(res));
       });
   };
@@ -33,7 +32,6 @@ export const createParent = parentObj => {
     })
       .then(res => res.json())
       .then(res => {
-        console.log(res.parent);
         if (res.jwt === undefined) {
           localStorage.clear();
           toast.error("Registration Unsuccessful", {

@@ -39,7 +39,6 @@ class CreateForm extends Component {
       })
         .then(res => res.json())
         .then(res => {
-          console.log(res.provider);
           if (res.error) {
             return <Redirect to="/login" />;
           } else {
@@ -77,7 +76,6 @@ class CreateForm extends Component {
     })
       .then(res => res.json())
       .then(res => {
-        // console.log(res);
         toast.success("Successfully created!", {
           position: toast.POSITION.BOTTOM_CENTER
         });

@@ -6,8 +6,6 @@ import { Link, withRouter } from "react-router-dom";
 import "./ChildCard.scss";
 
 const ChildCard = props => {
-  // console.log(props);
-  // console.log(props.editChild);
   const { name, age, image, address, allergies, balance } = props.child;
   return (
     <div className="child-card animated fadeInUp">
@@ -35,7 +33,7 @@ const ChildCard = props => {
             }}
             onClick={() => props.selectedChild(props.child)}
           >
-            Make Payment
+            Payment
           </button>
         </Link>
       ) : (

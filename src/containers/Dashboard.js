@@ -19,7 +19,6 @@ class Dashboard extends Component {
       })
         .then(res => res.json())
         .then(res => {
-          console.log(res.provider);
           if (res.error) {
             return <Redirect to="/login" />;
           } else {
