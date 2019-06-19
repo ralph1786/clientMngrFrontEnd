@@ -16,13 +16,31 @@ import "react-toastify/dist/ReactToastify.css";
 import SideDrawer from "./components/SideDrawer";
 import { closeSideDrawer } from "./actions/uiActions";
 
-import "./App.css";
+import "./App.scss";
 
 class App extends Component {
+  state = {
+    scrolled: false
+  };
+
+  componentDidMount() {
+    document.addEventListener("scroll", () => {
+      if (window.pageYOffset > 40) {
+        this.setState({
+          scrolled: true
+        });
+      } else {
+        this.setState({
+          scrolled: false
+        });
+      }
+    });
+  }
+
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar scrolled={this.state.scrolled} />
         <SideDrawer />
         <div
           className={this.props.isDrawerOpen ? "overlay" : ""}
