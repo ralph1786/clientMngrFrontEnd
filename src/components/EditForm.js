@@ -29,6 +29,7 @@ class EditForm extends Component {
     toast.warning(`${this.state.name} was edited!`, {
       position: toast.POSITION.BOTTOM_CENTER
     });
+    this.props.history.push("/dashboard");
   };
 
   render() {
@@ -96,11 +97,7 @@ class EditForm extends Component {
                 <br />
               </React.Fragment>
             )}
-            <input
-              style={{ outline: "none" }}
-              type="submit"
-              value="Edit Child"
-            />
+            <button>Edit Child</button>
             <CancelButton pathname={this.props.location.pathname} />
           </form>
         </div>

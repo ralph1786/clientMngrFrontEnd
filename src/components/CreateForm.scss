@@ -54,7 +54,7 @@ $secondary-color: white;
     label {
       color: $label-color;
     }
-    input[type="submit"] {
+    button {
       @include buttons();
 
       &:hover {

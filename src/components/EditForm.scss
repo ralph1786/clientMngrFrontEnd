@@ -46,7 +46,7 @@
       color: $label-color;
     }
 
-    input[type="submit"] {
+    button {
       @include formButton();
 
       &:hover {

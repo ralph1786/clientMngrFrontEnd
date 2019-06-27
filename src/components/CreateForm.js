@@ -60,6 +60,16 @@ class CreateForm extends Component {
 
   handleCreateSubmit = e => {
     e.preventDefault();
+    if (
+      Object.values(this.state).includes("") ||
+      Object.values(this.state).includes(null)
+    ) {
+      toast.error("Please All Fields Required!", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 5000
+      });
+      return;
+    }
     const data = new FormData();
     for (let key in this.state) {
       if (key === "forms") {
@@ -158,11 +168,7 @@ class CreateForm extends Component {
           />
           <br />
           <br />
-          <input
-            style={{ outline: "none" }}
-            type="submit"
-            value="Create Child"
-          />
+          <button>Create Child</button>
           <CancelButton pathname={this.props.history.location.pathname} />
         </form>
       </div>
