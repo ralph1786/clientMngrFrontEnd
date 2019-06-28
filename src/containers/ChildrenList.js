@@ -2,29 +2,23 @@ import React, { Component } from "react";
 import ChildCard from "../components/ChildCard";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { allChildren } from "../actions/childActions";
+import { allChildren, searchWord } from "../actions/childActions";
 import SearchBar from "../components/SearchBar";
 import "./ChildrenList.scss";
 
 class ChildrenList extends Component {
-  state = {
-    searchWord: ""
-  };
-
   componentDidMount() {
     this.props.allChildren();
   }
 
   changeHandler = e => {
-    this.setState({
-      searchWord: e.target.value
-    });
+    this.props.search(e.target.value);
   };
 
   childrenFilteredList = () => {
     const listChildren = this.props.children
       .filter(child =>
-        child.name.toLowerCase().includes(this.state.searchWord.toLowerCase())
+        child.name.toLowerCase().includes(this.props.searchTerm.toLowerCase())
       )
       .sort((a, b) => (a.name > b.name ? 1 : -1))
       .map(child => <ChildCard key={child.id} child={child} />);
@@ -36,7 +30,7 @@ class ChildrenList extends Component {
       <div>
         <div className="search-bar">
           <SearchBar
-            searchWord={this.state.searchWord}
+            searchWord={this.props.searchWord}
             onChange={this.changeHandler}
           />
         </div>
@@ -48,13 +42,15 @@ class ChildrenList extends Component {
 
 const mapStateToProps = state => {
   return {
-    children: state.children.children
+    children: state.children.children,
+    searchTerm: state.children.searchWord
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    allChildren: () => dispatch(allChildren())
+    allChildren: () => dispatch(allChildren()),
+    search: word => dispatch(searchWord(word))
   };
 };
 
