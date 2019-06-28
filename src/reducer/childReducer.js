@@ -1,5 +1,6 @@
 const initialState = {
-  children: []
+  children: [],
+  searchWord: ""
 };
 
 const childReducer = (state = initialState, action) => {
@@ -18,6 +19,11 @@ const childReducer = (state = initialState, action) => {
       return {
         ...state,
         children: state.children.filter(child => child.id !== action.payload)
+      };
+    case "SEARCH_WORD":
+      return {
+        ...state,
+        searchWord: action.payload
       };
     default:
       return state;

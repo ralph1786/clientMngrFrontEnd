@@ -15,6 +15,11 @@ const removeChild = id => ({
   payload: id
 });
 
+export const searchWord = searchWord => ({
+  type: "SEARCH_WORD",
+  payload: searchWord
+});
+
 export const allChildren = () => {
   return dispatch => {
     return fetch("http://localhost:80/api/v1/children")
