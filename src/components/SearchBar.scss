@@ -1,0 +1,33 @@
+.search-input {
+  position: relative;
+  border-radius: 25px;
+}
+
+.search-input-icon {
+  position: absolute;
+  top: 11%;
+  right: 36.25%;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .search-input-icon {
+    top: 8.25%;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 414px) {
+  .search-input-icon {
+    top: 10.75%;
+    right: 25%;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-input-icon {
+    top: 11%;
+    font-size: 10px;
+  }
+}

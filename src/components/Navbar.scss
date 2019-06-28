@@ -3,7 +3,7 @@
 @mixin navbarMixin() {
   position: fixed;
   width: 100%;
-  opacity: 0.9;
+  opacity: 1;
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -96,6 +96,29 @@
   background: linear-gradient(to right, #78ffd6, #a8ff78);
 }
 
+.navbar-search-input {
+  position: absolute;
+  top: 35%;
+  right: 20%;
+
+  .search-input {
+    height: 18px;
+    font-size: 1em;
+
+    &:focus {
+      outline: none;
+      border: 2px solid #a8ff78;
+      box-shadow: 0 0 6px #a8ff78;
+    }
+  }
+
+  .search-input-icon {
+    top: -57%;
+    right: -55%;
+    font-size: 14px;
+  }
+}
+
 @mixin mediaQuery {
   height: 50px;
   h2 {
@@ -126,6 +149,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .navbar-search-input {
+    right: 40%;
+  }
+}
+
 @media (max-width: 414px) {
   .navbar {
     @include mediaQuery();
@@ -133,6 +162,10 @@
 
   .navbar-scroll {
     @include mediaQuery();
+  }
+
+  .navbar-search-input {
+    display: none;
   }
 }
 

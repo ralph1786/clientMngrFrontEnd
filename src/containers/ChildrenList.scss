@@ -13,7 +13,7 @@
   height: 30px;
   font-size: 1.3em;
   margin-bottom: 7%;
-  margin-top: 10%;
+  margin-top: 6%;
   outline: none;
   text-align: center;
   border: 1px solid rgb(68, 67, 67);
@@ -25,10 +25,23 @@
   }
 }
 
+@media (max-width: 768px) {
+  .children-list {
+    margin-left: 25%;
+  }
+  .search-bar input {
+    height: 25px;
+    margin-top: 10.5%;
+  }
+}
+
 @media (max-width: 414px) {
+  .children-list {
+    margin-left: 15%;
+  }
   .search-bar input {
     width: 50%;
-    height: 20px;
+    height: 18px;
     margin-left: 25%;
     font-size: 1.1em;
     margin-top: 18%;
@@ -43,6 +56,11 @@
 
 @media (max-width: 320px) {
   .search-bar input {
-    margin-left: 30%;
+    margin-left: 25%;
+    height: 16px;
+    font-size: 0.9em;
+  }
+  .children-list {
+    margin-left: 4%;
   }
 }
