@@ -25,7 +25,7 @@ class App extends Component {
 
   componentDidMount() {
     document.addEventListener("scroll", () => {
-      if (window.pageYOffset > 40) {
+      if (window.pageYOffset > 75) {
         this.setState({
           scrolled: true
         });
