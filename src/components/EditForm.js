@@ -29,7 +29,11 @@ class EditForm extends Component {
     toast.warning(`${this.state.name} was edited!`, {
       position: toast.POSITION.BOTTOM_CENTER
     });
-    this.props.history.push("/dashboard");
+    if (this.props.location.pathname === "/edit") {
+      this.props.history.push("/dashboard");
+    } else {
+      this.props.history.push("parent_dashboard");
+    }
   };
 
   render() {
