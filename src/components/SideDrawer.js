@@ -19,12 +19,14 @@ const SideDrawer = props => {
       <button className="drawer_close_btn" onClick={props.closeSideDrawer}>
         <i className="fas fa-window-close fa-2x" />
       </button>
-      <div className="side-drawer-search">
-        <SearchBar
-          searchWord={props.searchWord}
-          onChange={e => changeHandler(e)}
-        />
-      </div>
+      {props.location.pathname === "/dashboard" ? (
+        <div className="side-drawer-search">
+          <SearchBar
+            searchWord={props.searchWord}
+            onChange={e => changeHandler(e)}
+          />
+        </div>
+      ) : null}
       <NavbarMenu pathname={props.location.pathname} parent="SideDrawer" />
     </div>
   );
