@@ -24,7 +24,7 @@ $secondary-color: white;
     grid-column: 5/9;
     grid-row: 2/6;
     text-align: center;
-    font-size: 1.8em;
+    font-size: 1.5em;
     margin: 10px;
     padding: 10px;
 
@@ -84,11 +84,19 @@ $secondary-color: white;
   }
 }
 
+@media (max-width: 768px) {
+  .create-form {
+    form {
+      font-size: 1.3em;
+    }
+  }
+}
+
 @media (max-width: 414px) {
   .create-form {
     form {
       grid-column: 3/11;
-      font-size: 1em;
+      font-size: 0.9em;
 
       input {
         height: 8px;
