@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import { loginProvider } from "../actions/authActions";
 import Message from "./Message";
 
-class LoginForm extends Component {
+export class LoginForm extends Component {
   state = {
     username: "",
     password: ""

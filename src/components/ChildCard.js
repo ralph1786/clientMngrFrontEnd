@@ -5,7 +5,7 @@ import { selectedChild } from "../actions/editActions";
 import { Link, withRouter } from "react-router-dom";
 import "./ChildCard.scss";
 
-const ChildCard = props => {
+export const ChildCard = props => {
   const { name, age, image, address, allergies, balance } = props.child;
   return (
     <div className="child-card animated fadeInUp">

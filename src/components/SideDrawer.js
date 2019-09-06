@@ -7,7 +7,7 @@ import { openSideDrawer, closeSideDrawer } from "../actions/uiActions";
 import SearchBar from "./SearchBar";
 import { searchWord } from "../actions/childActions";
 
-const SideDrawer = props => {
+export const SideDrawer = props => {
   const changeHandler = e => {
     props.searchTerm(e.target.value);
   };

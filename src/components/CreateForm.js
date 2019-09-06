@@ -8,7 +8,7 @@ import { setProvider } from "../actions/authActions";
 import ParentSelect from "./ParentSelect";
 import CancelButton from "./CancelButton";
 
-class CreateForm extends Component {
+export class CreateForm extends Component {
   state = {
     name: "",
     image: "",

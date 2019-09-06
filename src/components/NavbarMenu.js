@@ -4,7 +4,7 @@ import LogOut from "./LogOut";
 import { connect } from "react-redux";
 import { openSideDrawer, closeSideDrawer } from "../actions/uiActions";
 
-const NavbarMenu = props => {
+export const NavbarMenu = props => {
   return (
     <Fragment>
       {props.pathname === "/edit" || props.pathname === "/create" ? (

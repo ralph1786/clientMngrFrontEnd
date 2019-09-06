@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import CancelButton from "./CancelButton";
 import "./EditForm.scss";
 
-class EditForm extends Component {
+export class EditForm extends Component {
   state = {
     id: this.props.editChild.id,
     name: this.props.editChild.name,

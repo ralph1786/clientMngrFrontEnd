@@ -5,7 +5,7 @@ import { createParent } from "../actions/parentActions";
 import Modal from "react-modal";
 import "./ParentSignUp.scss";
 
-class ParentSignUp extends Component {
+export class ParentSignUp extends Component {
   state = {
     isModalOpen: true,
     name: "",
