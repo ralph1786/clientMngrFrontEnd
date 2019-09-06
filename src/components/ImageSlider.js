@@ -3,40 +3,28 @@ import "./ImageSlider.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import image1 from "../assets/images/image1.jpg";
+import image2 from "../assets/images/image2.jpg";
+import image3 from "../assets/images/image3.jpg";
+import image4 from "../assets/images/image4.jpg";
+import image5 from "../assets/images/image5.jpg";
 
 const ImageSlider = () => {
   return (
     <Carousel infiniteLoop={true} autoPlay={true}>
       <div>
-        <img
-          // src="https://images.pexels.com/photos/591652/play-fun-blocks-block-591652.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          src={`${image1}`}
-          alt="slider"
-        />
+        <img src={`${image1}`} alt="slider" />
       </div>
       <div>
-        <img
-          src="https://images.pexels.com/photos/6459/sand-summer-outside-playing.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-          alt="slider"
-        />
+        <img src={`${image2}`} alt="slider" />
       </div>
       <div>
-        <img
-          src="https://images.pexels.com/photos/1089069/pexels-photo-1089069.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          alt="slider"
-        />
+        <img src={`${image3}`} alt="slider" />
       </div>
       <div>
-        <img
-          src="https://images.pexels.com/photos/207665/pexels-photo-207665.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-          alt="slider"
-        />
+        <img src={`${image4}`} alt="slider" />
       </div>
       <div>
-        <img
-          src="https://images.pexels.com/photos/159579/crayons-coloring-book-coloring-book-159579.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-          alt="slider"
-        />
+        <img src={`${image5}`} alt="slider" />
       </div>
     </Carousel>
   );
