@@ -2,7 +2,7 @@
 
 .children-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 400px));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 400px));
   grid-template-rows: repeat(3, 1fr);
   margin-left: 12%;
 }
