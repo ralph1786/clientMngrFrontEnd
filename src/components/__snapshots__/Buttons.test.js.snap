@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`makes a snapshot of component 1`] = `
+<div
+  className="button"
+>
+  <Link
+    replace={false}
+    to="/login"
+  >
+    <button
+      className="btn-hover color-1"
+    >
+      Provider
+    </button>
+  </Link>
+  <Link
+    replace={false}
+    to="/parent_login"
+  >
+    <button
+      className="btn-hover color-1"
+    >
+      Parent
+    </button>
+  </Link>
+</div>
+`;
