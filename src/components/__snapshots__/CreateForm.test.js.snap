@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`provide a snapshot of the CreateForm component 1`] = `
+<div
+  className="create-form animated flipInY"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Name
+    </label>
+    <input
+      name="name"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    <br />
+    <label>
+      Image Url
+    </label>
+    <input
+      name="image"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    <br />
+    <label>
+      Age
+    </label>
+    <input
+      name="age"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    <br />
+    <label>
+      Address
+    </label>
+    <input
+      name="address"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    <br />
+    <label>
+      Allergies
+    </label>
+    <input
+      name="allergies"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    <br />
+    <label>
+      Balance
+    </label>
+    <input
+      name="balance"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    <br />
+    <label>
+      Parent
+    </label>
+    <withRouter(Connect(ParentSelect))
+      handleSelectChange={[Function]}
+      name="parent_id"
+      value={1}
+    />
+    <br />
+    <br />
+    <input
+      multiple={true}
+      name="forms"
+      onChange={[Function]}
+      type="file"
+    />
+    <br />
+    <br />
+    <button>
+      Create Child
+    </button>
+    <CancelButton />
+  </form>
+</div>
+`;

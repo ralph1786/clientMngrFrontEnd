@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`creates a snapshot of EditForm 1`] = `
+<Fragment>
+  <div
+    className="edit-form animated flipInY"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Name
+      </label>
+      <input
+        name="name"
+        onChange={[Function]}
+        type="text"
+      />
+      <br />
+      <br />
+      <label>
+        Image Url
+      </label>
+      <input
+        name="image"
+        onChange={[Function]}
+        type="text"
+      />
+      <br />
+      <br />
+      <label>
+        Age
+      </label>
+      <input
+        name="age"
+        onChange={[Function]}
+        type="text"
+      />
+      <br />
+      <br />
+      <label>
+        Address
+      </label>
+      <input
+        name="address"
+        onChange={[Function]}
+        type="text"
+      />
+      <br />
+      <br />
+      <label>
+        Allergies
+      </label>
+      <input
+        name="allergies"
+        onChange={[Function]}
+        type="text"
+      />
+      <br />
+      <br />
+      <label>
+        Balance
+      </label>
+      <input
+        name="balance"
+        onChange={[Function]}
+        type="text"
+      />
+      <br />
+      <br />
+      <button>
+        Edit Child
+      </button>
+      <CancelButton />
+    </form>
+  </div>
+</Fragment>
+`;

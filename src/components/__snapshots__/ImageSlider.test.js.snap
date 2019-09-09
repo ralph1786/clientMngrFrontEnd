@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`makes a snapshot of the ImageSlider component 1`] = `
+<Carousel
+  autoPlay={true}
+  axis="horizontal"
+  centerMode={false}
+  centerSlidePercentage={80}
+  dynamicHeight={false}
+  emulateTouch={false}
+  infiniteLoop={true}
+  interval={3000}
+  onChange={[Function]}
+  onClickItem={[Function]}
+  onClickThumb={[Function]}
+  selectedItem={0}
+  showArrows={true}
+  showIndicators={true}
+  showStatus={true}
+  showThumbs={true}
+  statusFormatter={[Function]}
+  stopOnHover={true}
+  swipeScrollTolerance={5}
+  swipeable={true}
+  transitionTime={350}
+  useKeyboardArrows={false}
+  verticalSwipe="standard"
+  width="100%"
+>
+  <div>
+    <img
+      alt="slider"
+      src="image1.jpg"
+    />
+  </div>
+  <div>
+    <img
+      alt="slider"
+      src="image2.jpg"
+    />
+  </div>
+  <div>
+    <img
+      alt="slider"
+      src="image3.jpg"
+    />
+  </div>
+  <div>
+    <img
+      alt="slider"
+      src="image4.jpg"
+    />
+  </div>
+  <div>
+    <img
+      alt="slider"
+      src="image5.jpg"
+    />
+  </div>
+</Carousel>
+`;
