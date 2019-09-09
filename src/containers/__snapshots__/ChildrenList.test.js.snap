@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`captures a snapshot of the ChildrenList component 1`] = `
+<div>
+  <div
+    className="search-bar"
+  >
+    <SearchBar
+      onChange={[Function]}
+    />
+  </div>
+  <div
+    className="children-list"
+  />
+</div>
+`;
