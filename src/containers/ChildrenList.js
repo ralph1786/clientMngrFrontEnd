@@ -6,7 +6,7 @@ import { allChildren, searchWord } from "../actions/childActions";
 import SearchBar from "../components/SearchBar";
 import "./ChildrenList.scss";
 
-class ChildrenList extends Component {
+export class ChildrenList extends Component {
   componentDidMount() {
     this.props.allChildren();
   }
