@@ -64,7 +64,7 @@ export class CreateForm extends Component {
       Object.values(this.state).includes("") ||
       Object.values(this.state).includes(null)
     ) {
-      toast.error("Please All Fields Required!", {
+      toast.error("All Fields Required!", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 5000
       });
