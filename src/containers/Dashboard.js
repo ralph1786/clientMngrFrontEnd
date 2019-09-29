@@ -5,7 +5,7 @@ import { withRouter, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { setProvider } from "../actions/authActions";
 
-class Dashboard extends Component {
+export class Dashboard extends Component {
   componentDidMount() {
     let token = localStorage.token;
     if (token) {
