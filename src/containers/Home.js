@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import ImageSlider from "../components/ImageSlider";
 import Buttons from "../components/Buttons";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
 
 class Home extends Component {
   render() {
@@ -15,4 +13,4 @@ class Home extends Component {
   }
 }
 
-export default withRouter(connect()(Home));
+export default Home;
