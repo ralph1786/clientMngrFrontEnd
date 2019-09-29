@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`creates a snapshot for the Dashboard component 1`] = `
+<div
+  className="dashboard"
+>
+  <withRouter(Connect(ChildrenList)) />
+</div>
+`;
