@@ -8,10 +8,10 @@ import "./ChildCard.scss";
 export const ChildCard = props => {
   const { name, age, image, address, allergies, balance } = props.child;
   return (
-    <div className="child-card animated fadeInUp">
+    <li className="child-card animated fadeInUp">
       <h3>Name: {name}</h3>
       <p>Age: {age}</p>
-      <img src={image} alt="children" />
+      <img src={image} alt="child profile photograph" />
       <address>Address: {address}</address>
       <p>Allergies: {allergies}</p>
       <p>Balance: ${balance}</p>
@@ -41,7 +41,7 @@ export const ChildCard = props => {
           Remove
         </button>
       )}
-    </div>
+    </li>
   );
 };
 
