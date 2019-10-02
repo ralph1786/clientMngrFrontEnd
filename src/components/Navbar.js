@@ -12,7 +12,7 @@ const Navbar = props => {
   };
 
   return (
-    <div className={props.scrolled ? "navbar-scroll" : "navbar"}>
+    <nav className={props.scrolled ? "navbar-scroll" : "navbar"}>
       <Link to="/">
         <h2>daycareMngr</h2>
       </Link>
@@ -27,7 +27,7 @@ const Navbar = props => {
       ) : null}
 
       <NavbarMenu pathname={props.location.pathname} />
-    </div>
+    </nav>
   );
 };
 
