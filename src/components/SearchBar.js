@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./SearchBar.scss";
 
 const SearchBar = props => {
   return (
-    <div>
+    <Fragment>
       <input
         className="search-input"
         type="text"
@@ -14,7 +14,7 @@ const SearchBar = props => {
       <span className="search-input-icon">
         <i className="fas fa-search fa-lg" />
       </span>
-    </div>
+    </Fragment>
   );
 };
 

@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import ImageSlider from "../components/ImageSlider";
 import Buttons from "../components/Buttons";
 
 class Home extends Component {
   render() {
     return (
-      <div>
+      <Fragment>
         <ImageSlider />
         <Buttons />
-      </div>
+      </Fragment>
     );
   }
 }
