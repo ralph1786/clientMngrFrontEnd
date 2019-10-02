@@ -23,21 +23,35 @@ class App extends Component {
     scrolled: false
   };
 
+  scrollHandler = () => {
+    if (window.pageYOffset > 75) {
+      this.setState({
+        scrolled: true
+      });
+    } else {
+      this.setState({
+        scrolled: false
+      });
+    }
+  };
+
   componentDidMount() {
-    document.addEventListener("scroll", () => {
-      if (window.pageYOffset > 75) {
-        this.setState({
-          scrolled: true
-        });
-      } else {
-        this.setState({
-          scrolled: false
-        });
-      }
-    });
+    document.addEventListener("scroll", this.scrollHandler);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.state.scrolled !== nextState.scrolled) {
+      return true;
+    }
+    return false;
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("scroll", this.scrollHandler);
   }
 
   render() {
+    console.log(this.state.scrolled);
     return (
       <div>
         <Navbar scrolled={this.state.scrolled} />
