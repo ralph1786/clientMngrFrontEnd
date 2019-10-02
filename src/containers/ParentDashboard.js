@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { withRouter, Redirect } from "react-router-dom";
 import { addParent } from "../actions/authActions";
@@ -50,18 +50,16 @@ class ParentDashboard extends Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <div />
         <br />
         <br />
-        <div>
-          <h1>
-            {<Message />}
-            {this.props.parent.name}
-          </h1>
-        </div>
-        <div className="parent-dashboard">{this.renderChildren()}</div>
-      </div>
+        <h1>
+          {<Message />}
+          {this.props.parent.name}
+        </h1>
+        <ul className="parent-dashboard">{this.renderChildren()}</ul>
+      </Fragment>
     );
   }
 }
