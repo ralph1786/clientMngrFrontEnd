@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import ChildCard from "../components/ChildCard";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
@@ -27,15 +27,15 @@ export class ChildrenList extends Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <div className="search-bar">
           <SearchBar
             searchWord={this.props.searchWord}
             onChange={this.changeHandler}
           />
         </div>
-        <div className="children-list">{this.childrenFilteredList()}</div>
-      </div>
+        <ul className="children-list">{this.childrenFilteredList()}</ul>
+      </Fragment>
     );
   }
 }
