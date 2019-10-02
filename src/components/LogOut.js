@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { removeProvider } from "../actions/authActions";
@@ -26,7 +26,7 @@ const renderButton = props => {
 };
 
 const LogOut = props => {
-  return <div>{renderButton(props)}</div>;
+  return <Fragment>{renderButton(props)}</Fragment>;
 };
 
 const mapStateToProps = state => {
