@@ -31,16 +31,18 @@ class LoginForm extends Component {
       <div className="parent-login animated flipInY">
         <h1>{<Message />} Parent</h1>
         <form onSubmit={this.handleSubmit}>
-          <label>Username</label>
+          <label htmlFor="username">Username</label>
           <input
+            id="username"
             type="text"
             value={this.state.username}
             name="username"
             onChange={this.handleChange}
           />
           <br />
-          <label>Password</label>
+          <label htmlFor="password">Password</label>
           <input
+            id="password"
             type="password"
             value={this.state.password}
             name="password"

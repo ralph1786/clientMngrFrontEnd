@@ -45,24 +45,27 @@ export class ParentSignUp extends Component {
             <span onClick={this.goBack}>X</span>
             <form onSubmit={this.handleSubmit}>
               <h4>Register</h4>
-              <label>Name</label>
+              <label htmlFor="name">Name</label>
               <input
+                id="name"
                 type="text"
                 value={this.state.name}
                 name="name"
                 onChange={this.handleChange}
               />
               <br />
-              <label>Username</label>
+              <label htmlFor="username">Username</label>
               <input
+                id="username"
                 type="text"
                 value={this.state.username}
                 name="username"
                 onChange={this.handleChange}
               />
               <br />
-              <label>Password</label>
+              <label htmlFor="password">Password</label>
               <input
+                id="password"
                 type="password"
                 value={this.state.password}
                 name="password"

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router-dom";
 import { updateChild } from "../actions/editActions";
 import { toast } from "react-toastify";
@@ -38,11 +38,12 @@ export class EditForm extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <div className="edit-form animated flipInY">
           <form onSubmit={this.handleEditSubmit}>
-            <label>Name</label>
+            <label htmlFor="name">Name</label>
             <input
+              id="name"
               name="name"
               type="text"
               value={this.state.name}
@@ -50,8 +51,9 @@ export class EditForm extends Component {
             />
             <br />
             <br />
-            <label>Image Url</label>
+            <label htmlFor="profile image">Profile Image</label>
             <input
+              id="profile image"
               name="image"
               type="text"
               value={this.state.image}
@@ -59,8 +61,9 @@ export class EditForm extends Component {
             />
             <br />
             <br />
-            <label>Age</label>
+            <label htmlFor="age">Age</label>
             <input
+              id="age"
               name="age"
               type="text"
               value={this.state.age}
@@ -68,8 +71,9 @@ export class EditForm extends Component {
             />
             <br />
             <br />
-            <label>Address</label>
+            <label htmlFor="address">Address</label>
             <input
+              id="address"
               name="address"
               type="text"
               value={this.state.address}
@@ -77,8 +81,9 @@ export class EditForm extends Component {
             />
             <br />
             <br />
-            <label>Allergies</label>
+            <label htmlFor="allergies">Allergies</label>
             <input
+              id="allergies"
               name="allergies"
               type="text"
               value={this.state.allergies}
@@ -89,9 +94,10 @@ export class EditForm extends Component {
             {this.props.location.pathname === "/edit_parent" ? (
               " "
             ) : (
-              <React.Fragment>
-                <label>Balance</label>
+              <Fragment>
+                <label htmlFor="balance">Balance</label>
                 <input
+                  id="balance"
                   name="balance"
                   type="text"
                   value={this.state.balance}
@@ -99,13 +105,13 @@ export class EditForm extends Component {
                 />
                 <br />
                 <br />
-              </React.Fragment>
+              </Fragment>
             )}
             <button>Edit Child</button>
             <CancelButton pathname={this.props.location.pathname} />
           </form>
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

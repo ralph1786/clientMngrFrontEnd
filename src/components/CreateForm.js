@@ -98,8 +98,9 @@ export class CreateForm extends Component {
     return (
       <div className="create-form animated flipInY">
         <form onSubmit={this.handleCreateSubmit}>
-          <label>Name</label>
+          <label htmlFor="name">Name</label>
           <input
+            id="name"
             name="name"
             type="text"
             value={this.state.name}
@@ -107,8 +108,9 @@ export class CreateForm extends Component {
           />
           <br />
           <br />
-          <label>Image Url</label>
+          <label htmlFor="profile image">Profile Image</label>
           <input
+            id="profile image"
             name="image"
             type="text"
             value={this.state.image}
@@ -116,8 +118,9 @@ export class CreateForm extends Component {
           />
           <br />
           <br />
-          <label>Age</label>
+          <label htmlFor="age">Age</label>
           <input
+            id="age"
             name="age"
             type="text"
             value={this.state.age}
@@ -125,8 +128,9 @@ export class CreateForm extends Component {
           />
           <br />
           <br />
-          <label>Address</label>
+          <label htmlFor="address">Address</label>
           <input
+            id="address"
             name="address"
             type="text"
             value={this.state.address}
@@ -134,8 +138,9 @@ export class CreateForm extends Component {
           />
           <br />
           <br />
-          <label>Allergies</label>
+          <label htmlFor="allergies">Allergies</label>
           <input
+            id="allergies"
             name="allergies"
             type="text"
             value={this.state.allergies}
@@ -143,8 +148,9 @@ export class CreateForm extends Component {
           />
           <br />
           <br />
-          <label>Balance</label>
+          <label htmlFor="balance">Balance</label>
           <input
+            id="balance"
             name="balance"
             type="text"
             value={this.state.balance}
