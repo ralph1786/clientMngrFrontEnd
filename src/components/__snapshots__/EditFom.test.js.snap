@@ -8,60 +8,78 @@ exports[`creates a snapshot of EditForm 1`] = `
     <form
       onSubmit={[Function]}
     >
-      <label>
+      <label
+        htmlFor="name"
+      >
         Name
       </label>
       <input
+        id="name"
         name="name"
         onChange={[Function]}
         type="text"
       />
       <br />
       <br />
-      <label>
-        Image Url
+      <label
+        htmlFor="profile image"
+      >
+        Profile Image
       </label>
       <input
+        id="profile image"
         name="image"
         onChange={[Function]}
         type="text"
       />
       <br />
       <br />
-      <label>
+      <label
+        htmlFor="age"
+      >
         Age
       </label>
       <input
+        id="age"
         name="age"
         onChange={[Function]}
         type="text"
       />
       <br />
       <br />
-      <label>
+      <label
+        htmlFor="address"
+      >
         Address
       </label>
       <input
+        id="address"
         name="address"
         onChange={[Function]}
         type="text"
       />
       <br />
       <br />
-      <label>
+      <label
+        htmlFor="allergies"
+      >
         Allergies
       </label>
       <input
+        id="allergies"
         name="allergies"
         onChange={[Function]}
         type="text"
       />
       <br />
       <br />
-      <label>
+      <label
+        htmlFor="balance"
+      >
         Balance
       </label>
       <input
+        id="balance"
         name="balance"
         onChange={[Function]}
         type="text"

@@ -51,30 +51,39 @@ exports[`should check for changes to ParentSignUp component through snapshot 1`]
         <h4>
           Register
         </h4>
-        <label>
+        <label
+          htmlFor="name"
+        >
           Name
         </label>
         <input
+          id="name"
           name="name"
           onChange={[Function]}
           type="text"
           value=""
         />
         <br />
-        <label>
+        <label
+          htmlFor="username"
+        >
           Username
         </label>
         <input
+          id="username"
           name="username"
           onChange={[Function]}
           type="text"
           value=""
         />
         <br />
-        <label>
+        <label
+          htmlFor="password"
+        >
           Password
         </label>
         <input
+          id="password"
           name="password"
           onChange={[Function]}
           type="password"

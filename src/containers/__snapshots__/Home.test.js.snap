@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`creates a snapshot of the Home component 1`] = `
-<div>
+<Fragment>
   <ImageSlider />
   <Buttons />
-</div>
+</Fragment>
 `;
