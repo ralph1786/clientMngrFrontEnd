@@ -9,7 +9,6 @@ class ParentSelect extends Component {
   }
 
   render() {
-    // console.log(this.props);
     const { name, value, handleSelectChange } = this.props;
     const listParents = this.props.parents.map(parent => (
       <option key={parent.id} value={parent.id}>
