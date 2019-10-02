@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent, Fragment } from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import Home from "./containers/Home";
 import LoginForm from "./components/LoginForm";
@@ -18,7 +18,7 @@ import { closeSideDrawer } from "./actions/uiActions";
 
 import "./App.scss";
 
-class App extends Component {
+class App extends PureComponent {
   state = {
     scrolled: false
   };
@@ -39,13 +39,6 @@ class App extends Component {
     document.addEventListener("scroll", this.scrollHandler);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    if (this.state.scrolled !== nextState.scrolled) {
-      return true;
-    }
-    return false;
-  }
-
   componentWillUnmount() {
     document.removeEventListener("scroll", this.scrollHandler);
   }
@@ -53,7 +46,7 @@ class App extends Component {
   render() {
     console.log(this.state.scrolled);
     return (
-      <div>
+      <Fragment>
         <Navbar scrolled={this.state.scrolled} />
         <SideDrawer />
         <div
@@ -139,7 +132,7 @@ class App extends Component {
           <Route path="/" component={Home} />
         </Switch>
         <ToastContainer autoClose={3000} />
-      </div>
+      </Fragment>
     );
   }
 }
