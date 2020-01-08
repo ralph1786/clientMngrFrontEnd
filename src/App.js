@@ -1,19 +1,19 @@
 import React, { PureComponent, Fragment } from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import Home from "./containers/Home";
-import LoginForm from "./components/LoginForm";
-import ParentLoginForm from "./components/ParentLoginForm";
+import LoginForm from "./components/Forms/AuthForms/LoginForm";
+import ParentLoginForm from "./components/Forms/AuthForms/ParentLoginForm";
 import Dashboard from "./containers/Dashboard";
 import ParentDashboard from "./containers/ParentDashboard";
-import CreateForm from "./components/CreateForm";
-import EditForm from "./components/EditForm.js";
-import Navbar from "./components/Navbar";
+import CreateForm from "./components/Forms/CreateForm";
+import EditForm from "./components/Forms/EditForm";
+import Navbar from "./components/Navigation/Navbar";
 import { connect } from "react-redux";
-import ParentSignUp from "./components/ParentSignUp";
+import ParentSignUp from "./components/Forms/ParentSignUp";
 import PaymentModal from "./components/PaymentModal";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import SideDrawer from "./components/SideDrawer";
+import SideDrawer from "./components/UX/SideDrawer";
 import { closeSideDrawer } from "./actions/uiActions";
 
 import "./App.scss";
@@ -150,9 +150,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(App)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

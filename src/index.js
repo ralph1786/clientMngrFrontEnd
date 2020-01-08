@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware, combineReducers, compose } from "redux";
 import thunk from "redux-thunk";
 import { BrowserRouter as Router } from "react-router-dom";
-import ErrorBoundary from "./components/ErrorBoundary";
+import ErrorBoundary from "./components/UX/ErrorBoundary";
 import "./index.css";
 import App from "./App";
 import authReducer from "./reducer/authReducer";
