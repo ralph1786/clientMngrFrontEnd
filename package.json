@@ -3,19 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
-    "node-sass": "^4.11.0",
-    "react": "^16.8.4",
+    "axios": "^0.18.1",
+    "node-sass": "^4.13.0",
+    "react": "^16.12.0",
     "react-activestorage-provider": "^0.8.0",
-    "react-dom": "^16.8.4",
-    "react-image-gallery": "^0.8.14",
-    "react-modal": "^3.8.1",
+    "react-dom": "^16.12.0",
+    "react-image-gallery": "^0.8.18",
+    "react-modal": "^3.11.1",
     "react-redux": "^6.0.1",
-    "react-responsive-carousel": "^3.1.47",
+    "react-responsive-carousel": "^3.1.51",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",
-    "react-toastify": "^5.0.0-rc.3",
-    "redux": "^4.0.1",
+    "react-toastify": "^5.5.0",
+    "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
@@ -34,9 +34,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.4.0",
-    "sinon": "^7.4.2"
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.3",
+    "sinon": "^7.5.0"
   }
 }
