@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
-import { createChild } from "../actions/childActions";
+import { createChild } from "../../actions/childActions";
 import { connect } from "react-redux";
 import "./CreateForm.scss";
 import { toast } from "react-toastify";
-import { setProvider } from "../actions/authActions";
-import ParentSelect from "./ParentSelect";
-import CancelButton from "./CancelButton";
+import { setProvider } from "../../actions/authActions";
+import ParentSelect from "../ParentSelect";
+import CancelButton from "../UI/CancelButton";
 
 export class CreateForm extends Component {
   state = {
@@ -196,8 +196,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(CreateForm)
+  connect(mapStateToProps, mapDispatchToProps)(CreateForm)
 );

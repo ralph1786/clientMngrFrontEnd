@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./ParentLoginForm.scss";
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
-import { loginParent } from "../actions/authActions";
-import Message from "./Message";
+import { loginParent } from "../../../actions/authActions";
+import Message from "../../UX/Message";
 
 class LoginForm extends Component {
   state = {
@@ -70,8 +70,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(LoginForm)
+  connect(mapStateToProps, mapDispatchToProps)(LoginForm)
 );

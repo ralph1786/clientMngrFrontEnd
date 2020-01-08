@@ -1,6 +1,6 @@
-@import "../utilities/variables";
+@import "../../../utilities/variables";
 
-.login {
+.parent-login {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
@@ -8,7 +8,7 @@
   h1 {
     grid-column: 5/9;
     text-align: center;
-    grid-row: 2/3;
+    grid-row: 3/4;
   }
 
   form {
@@ -19,7 +19,7 @@
     grid-column: 5/9;
     grid-row: 4/8;
     text-align: center;
-    font-size: 1.8em;
+    font-size: 2em;
     margin: 10px;
 
     label,
@@ -56,62 +56,84 @@
       }
     }
   }
+  a {
+    grid-column: 8/9;
+    grid-row: 7/8;
+    place-self: center;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: $label-color;
+
+    &:hover {
+      color: $button-color-hover;
+      transform: scale(1.1);
+      transition: all 0.4s ease-in;
+    }
+  }
 }
 
 @media (max-width: 1024px) {
-  .login form {
-    font-size: 1.2em;
+  .parent-login {
+    form {
+      grid-column: 4/10;
 
-    input {
-      height: 10px;
+      input {
+        height: 12px;
+      }
+    }
+    a {
+      grid-column: 9/10;
+      margin-right: 20px;
     }
   }
 }
 
 @media (max-width: 768px) {
-  .login form {
-    font-size: 1.2em;
-    grid-row: 3/5;
-    padding: 20px;
-    grid-column: 4/10;
-    input {
-      height: 6px;
-      margin-top: 20px;
+  .parent-login {
+    form {
+      font-size: 1.2em;
     }
-    label {
-      font-size: 1.1em;
+    a {
+      font-size: 0.9em;
     }
-    button {
-      margin-top: 20px;
-      font-size: 12px;
-    }
-  }
-  .login h1 {
-    font-size: 30px;
   }
 }
 
 @media (max-width: 414px) {
-  .login form {
-    font-size: 1em;
-    grid-row: 3/5;
-    grid-column: 3/11;
-    padding: 15px;
-    input {
-      height: 6px;
-      margin-top: 20px;
-      padding: 5px;
+  .parent-login {
+    form {
+      grid-column: 3/11;
+      grid-row: 3/7;
+
+      label,
+      input {
+        margin-top: 20px;
+        height: 10px;
+        padding: 5px;
+      }
+
+      button {
+        font-size: 12px;
+      }
     }
-    label {
-      font-size: 1em;
+
+    a {
+      grid-column: 10/11;
+      grid-row: 6/7;
+      font-size: 0.8em;
     }
-    button {
-      margin-top: 15px;
-      font-size: 10px;
+    h1 {
+      grid-row: 2/3;
+      font-size: 20px;
+      grid-column: 3/11;
     }
   }
-  .login h1 {
-    font-size: 20px;
-    grid-column: 4/10;
+}
+
+@media (max-width: 360px) {
+  .parent-login {
+    form {
+      font-size: 1em;
+    }
   }
 }

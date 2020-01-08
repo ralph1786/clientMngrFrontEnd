@@ -2,10 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import "./SideDrawer.scss";
-import NavbarMenu from "./NavbarMenu";
-import { openSideDrawer, closeSideDrawer } from "../actions/uiActions";
+import NavbarMenu from "../Navigation/NavbarMenu";
+import { openSideDrawer, closeSideDrawer } from "../../actions/uiActions";
 import SearchBar from "./SearchBar";
-import { searchWord } from "../actions/childActions";
+import { searchWord } from "../../actions/childActions";
 
 export const SideDrawer = props => {
   const changeHandler = e => {
@@ -48,8 +48,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(SideDrawer)
+  connect(mapStateToProps, mapDispatchToProps)(SideDrawer)
 );

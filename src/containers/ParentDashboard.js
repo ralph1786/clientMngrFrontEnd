@@ -4,7 +4,7 @@ import { withRouter, Redirect } from "react-router-dom";
 import { addParent } from "../actions/authActions";
 import ChildCard from "../components/ChildCard";
 import "./ParentDashboard.scss";
-import Message from "../components/Message";
+import Message from "../components/UX/Message";
 
 class ParentDashboard extends Component {
   componentDidMount() {
@@ -77,8 +77,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(ParentDashboard)
+  connect(mapStateToProps, mapDispatchToProps)(ParentDashboard)
 );

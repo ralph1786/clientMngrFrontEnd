@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { createParent } from "../actions/parentActions";
+import { createParent } from "../../actions/parentActions";
 import Modal from "react-modal";
 import "./ParentSignUp.scss";
 
@@ -108,9 +108,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRouter(
-  connect(
-    null,
-    mapDispatchToProps
-  )(ParentSignUp)
-);
+export default withRouter(connect(null, mapDispatchToProps)(ParentSignUp));

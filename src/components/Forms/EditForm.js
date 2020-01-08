@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router-dom";
-import { updateChild } from "../actions/editActions";
+import { updateChild } from "../../actions/editActions";
 import { toast } from "react-toastify";
 import { connect } from "react-redux";
-import CancelButton from "./CancelButton";
+import CancelButton from "../UI/CancelButton";
 import "./EditForm.scss";
 
 export class EditForm extends Component {
@@ -129,8 +129,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(EditForm)
+  connect(mapStateToProps, mapDispatchToProps)(EditForm)
 );

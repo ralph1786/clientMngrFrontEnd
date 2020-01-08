@@ -1,4 +1,4 @@
-@import "../utilities/variables";
+@import "../../utilities/variables";
 
 @mixin formButton {
   width: 50%;
@@ -40,10 +40,13 @@
       outline: none;
       float: right;
       margin-right: 20px;
+      // margin-bottom: 1.5rem;
     }
 
     label {
       color: $label-color;
+      // display: block;
+      // margin-bottom: 1.5rem;
     }
 
     button {

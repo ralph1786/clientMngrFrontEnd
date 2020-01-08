@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import "./Navbar.scss";
 import NavbarMenu from "./NavbarMenu";
-import SearchBar from "./SearchBar";
-import { searchWord } from "../actions/childActions";
+import SearchBar from "../UX/SearchBar";
+import { searchWord } from "../../actions/childActions";
 
 const Navbar = props => {
   const changeHandler = e => {
@@ -42,9 +42,4 @@ const mapDispatchToProps = dispatch => ({
   searchTerm: word => dispatch(searchWord(word))
 });
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Navbar)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Navbar));

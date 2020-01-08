@@ -3,7 +3,7 @@ import ChildCard from "../components/ChildCard";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { allChildren, searchWord } from "../actions/childActions";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/UX/SearchBar";
 import "./ChildrenList.scss";
 
 export class ChildrenList extends Component {
@@ -55,8 +55,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(ChildrenList)
+  connect(mapStateToProps, mapDispatchToProps)(ChildrenList)
 );

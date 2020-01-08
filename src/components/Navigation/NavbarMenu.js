@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import LogOut from "./LogOut";
+import LogOut from "../LogOut";
 import { connect } from "react-redux";
-import { openSideDrawer, closeSideDrawer } from "../actions/uiActions";
+import { openSideDrawer, closeSideDrawer } from "../../actions/uiActions";
 
 export const NavbarMenu = props => {
   return (
@@ -63,7 +63,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(NavbarMenu);
+export default connect(null, mapDispatchToProps)(NavbarMenu);

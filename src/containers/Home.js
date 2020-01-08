@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
-import ImageSlider from "../components/ImageSlider";
-import Buttons from "../components/Buttons";
+import ImageSlider from "../components/UX/ImageSlider";
+import Buttons from "../components/UI/Buttons";
 
 class Home extends Component {
   render() {
