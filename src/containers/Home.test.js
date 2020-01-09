@@ -1,8 +1,8 @@
 import React from "react";
 import { shallow } from "enzyme";
 import Home from "./Home";
-import Buttons from "../components/Buttons";
-import ImageSlider from "../components/ImageSlider";
+import Buttons from "../components/UI/Buttons";
+import ImageSlider from "../components/UX/ImageSlider";
 
 let wrapper;
 

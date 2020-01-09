@@ -10,9 +10,19 @@ exports[`makes a snapshot of the ImageSlider component 1`] = `
   emulateTouch={false}
   infiniteLoop={true}
   interval={3000}
+  labels={
+    Object {
+      "item": "slide item",
+      "leftArrow": "previous slide / item",
+      "rightArrow": "next slide / item",
+    }
+  }
   onChange={[Function]}
   onClickItem={[Function]}
   onClickThumb={[Function]}
+  onSwipeEnd={[Function]}
+  onSwipeMove={[Function]}
+  onSwipeStart={[Function]}
   selectedItem={0}
   showArrows={true}
   showIndicators={true}

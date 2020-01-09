@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { ChildrenList } from "./ChildrenList";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/UX/SearchBar";
 import { ChildCard } from "../components/ChildCard";
 
 let wrapper;
