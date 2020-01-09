@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { setProvider } from "../../actions/authActions";
 import ParentSelect from "../ParentSelect";
 import CancelButton from "../UI/CancelButton";
+import LabelInput from "./LabelInput";
 
 export class CreateForm extends Component {
   state = {
@@ -98,66 +99,48 @@ export class CreateForm extends Component {
     return (
       <div className="create-form animated flipInY">
         <form onSubmit={this.handleCreateSubmit}>
-          <label htmlFor="name">Name</label>
-          <input
-            id="name"
+          <LabelInput
+            labelName="Name"
             name="name"
-            type="text"
+            inputType="text"
             value={this.state.name}
-            onChange={this.handleChange}
+            changeHandler={this.handleChange}
           />
-          <br />
-          <br />
-          <label htmlFor="profile image">Profile Image</label>
-          <input
-            id="profile image"
+          <LabelInput
+            labelName="Profile Image"
             name="image"
-            type="text"
+            inputType="text"
             value={this.state.image}
-            onChange={this.handleChange}
+            changeHandler={this.handleChange}
           />
-          <br />
-          <br />
-          <label htmlFor="age">Age</label>
-          <input
-            id="age"
+          <LabelInput
+            labelName="Age"
             name="age"
-            type="text"
+            inputType="text"
             value={this.state.age}
-            onChange={this.handleChange}
+            changeHandler={this.handleChange}
           />
-          <br />
-          <br />
-          <label htmlFor="address">Address</label>
-          <input
-            id="address"
+          <LabelInput
+            labelName="Address"
             name="address"
-            type="text"
+            inputType="text"
             value={this.state.address}
-            onChange={this.handleChange}
+            changeHandler={this.handleChange}
           />
-          <br />
-          <br />
-          <label htmlFor="allergies">Allergies</label>
-          <input
-            id="allergies"
+          <LabelInput
+            labelName="Allergies"
             name="allergies"
-            type="text"
+            inputType="text"
             value={this.state.allergies}
-            onChange={this.handleChange}
+            changeHandler={this.handleChange}
           />
-          <br />
-          <br />
-          <label htmlFor="balance">Balance</label>
-          <input
-            id="balance"
+          <LabelInput
+            labelName="Balance"
             name="balance"
-            type="text"
+            inputType="text"
             value={this.state.balance}
-            onChange={this.handleChange}
+            changeHandler={this.handleChange}
           />
-          <br />
-          <br />
           <label>Parent</label>
           <ParentSelect
             name="parent_id"
