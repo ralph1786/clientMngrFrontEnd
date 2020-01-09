@@ -1,9 +1,12 @@
 import React, { Component, Fragment } from "react";
+
 import { withRouter } from "react-router-dom";
 import { updateChild } from "../../actions/editActions";
 import { toast } from "react-toastify";
 import { connect } from "react-redux";
 import CancelButton from "../UI/CancelButton";
+import LabelInput from "./LabelInput";
+
 import "./EditForm.scss";
 
 export class EditForm extends Component {
@@ -38,87 +41,67 @@ export class EditForm extends Component {
 
   render() {
     return (
-      <Fragment>
-        <div className="edit-form animated flipInY">
-          <form onSubmit={this.handleEditSubmit}>
-            <label htmlFor="name">Name</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              value={this.state.name}
-              onChange={this.handleChange}
-            />
-            <br />
-            <br />
-            <label htmlFor="profile image">Profile Image</label>
-            <input
-              id="profile image"
-              name="image"
-              type="text"
-              value={this.state.image}
-              onChange={this.handleChange}
-            />
-            <br />
-            <br />
-            <label htmlFor="age">Age</label>
-            <input
-              id="age"
-              name="age"
-              type="text"
-              value={this.state.age}
-              onChange={this.handleChange}
-            />
-            <br />
-            <br />
-            <label htmlFor="address">Address</label>
-            <input
-              id="address"
-              name="address"
-              type="text"
-              value={this.state.address}
-              onChange={this.handleChange}
-            />
-            <br />
-            <br />
-            <label htmlFor="allergies">Allergies</label>
-            <input
-              id="allergies"
-              name="allergies"
-              type="text"
-              value={this.state.allergies}
-              onChange={this.handleChange}
-            />
-            <br />
-            <br />
-            {this.props.location.pathname === "/edit_parent" ? (
-              " "
-            ) : (
-              <Fragment>
-                <label htmlFor="balance">Balance</label>
-                <input
-                  id="balance"
-                  name="balance"
-                  type="text"
-                  value={this.state.balance}
-                  onChange={this.handleChange}
-                />
-                <br />
-                <br />
-              </Fragment>
-            )}
-            <button>Edit Child</button>
-            <CancelButton pathname={this.props.location.pathname} />
-          </form>
-        </div>
-      </Fragment>
+      <div className="edit-form animated flipInY">
+        <form onSubmit={this.handleEditSubmit}>
+          <LabelInput
+            labelName="Name"
+            name="name"
+            inputType="text"
+            value={this.state.name}
+            changeHandler={this.handleChange}
+          />
+          <LabelInput
+            labelName="Profile Image"
+            name="image"
+            inputType="text"
+            value={this.state.image}
+            changeHandler={this.handleChange}
+          />
+          <LabelInput
+            labelName="Age"
+            name="age"
+            inputType="text"
+            value={this.state.age}
+            changeHandler={this.handleChange}
+          />
+          <LabelInput
+            labelName="Address"
+            name="address"
+            inputType="text"
+            value={this.state.address}
+            changeHandler={this.handleChange}
+          />
+          <LabelInput
+            labelName="Allergies"
+            name="allergies"
+            inputType="text"
+            value={this.state.allergies}
+            changeHandler={this.handleChange}
+          />
+          {this.props.location.pathname === "/edit_parent" ? (
+            " "
+          ) : (
+            <Fragment>
+              <LabelInput
+                labelName="Balance"
+                name="balance"
+                inputType="text"
+                value={this.state.balance}
+                changeHandler={this.handleChange}
+              />
+            </Fragment>
+          )}
+          <button>Edit Child</button>
+          <CancelButton pathname={this.props.location.pathname} />
+        </form>
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    editChild: state.editChild
+    editChild: state.editChild.childToEdit
   };
 };
 
