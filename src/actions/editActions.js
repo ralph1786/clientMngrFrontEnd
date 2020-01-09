@@ -3,10 +3,10 @@ export const selectedChild = childObj => ({
   payload: childObj
 });
 
-const editChild = childObj => ({
-  type: "EDIT_CHILD",
-  payload: childObj
-});
+// const editChild = childObj => ({
+//   type: "EDIT_CHILD",
+//   payload: childObj
+// });
 
 export const openModal = () => ({
   type: "OPEN_MODAL"
@@ -24,7 +24,8 @@ export const updateChild = childObj => {
     })
       .then(res => res.json())
       .then(res => {
-        dispatch(editChild(res));
+        console.log(res);
+        // dispatch(editChild(res));
       })
       .catch(err => console.log(err));
   };
